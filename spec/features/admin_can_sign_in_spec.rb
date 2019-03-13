@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'Admin can sign in', type: :feature do
   scenario 'Admin can sign in' do
+    @admin = create(:admin)
     visit('/adminportal')
     fill_in 'Email', with:"testboy@aol.com"
     fill_in 'Password', with:"helloworld"
