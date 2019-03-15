@@ -1,8 +1,10 @@
-hi!
-<%= form_tag("/session", method: "post") do %>
-  <%= label_tag("Email:") %>
-  <%= text_field_tag(:email) %>
-  <%= label_tag("Password:") %>
-  <%= password_field_tag(:password) %>
-  <%= submit_tag("Log in") %>
-<% end %>
+<div class="portal_panel">
+  <%= image_tag("/portal_logo.png") %>
+  <div class="login_interface">
+    <%= form_tag("/session", method: "post") do %>
+      <%= text_field_tag(:email, nil, placeholder: 'email') %>
+      <%= password_field_tag(:password, nil, placeholder: 'password') %><br><br>
+      <%= submit_tag("Log in") %>
+    <% end %>
+  </div>
+</div>

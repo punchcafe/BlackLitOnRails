@@ -1,3 +1,91 @@
 // Place all the styles related to the admins controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  text-align: center;
+}
+
+
+.portal_panel {
+  height: 500px;
+  display: inline-block;
+  text-align: center;
+  width: 500px;
+}
+
+.portal_panel img {
+  z-index: -1;
+  position: absolute;
+  width: 500px;
+}
+
+.portal_panel:hover img{
+  transition: 0.4s;
+  opacity: 0.9;
+  filter: blur(3px);
+}
+
+
+.portal_panel .login_interface{
+  width: 500px;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  top: 200px;
+  opacity: 0;
+}
+
+.portal_panel:hover .login_interface{
+  transition: 0.4s;
+  opacity: 1;
+}
+
+.portal_panel .login_interface input {
+  font-weight: bold;
+  box-shadow: 0px 3px 6px black;
+  color: white;
+  background-color: black;
+  text-align: center;
+  height: 21px;
+  border-radius: 8px;
+  border: 0px;
+}
+
+.portal_panel .login_interface input:hover {
+  color: white;
+  border: 0px;
+  transition: 0.2s;
+  opacity: 0.8;
+  background-color: #ff6d19;
+}
+
+
+.portal_panel .login_interface input::placeholder {
+  font-weight: lighter;
+  font-style: italic;
+}
+
+
+.portal_panel .login_interface input:hover::placeholder {
+  transition: 0.2s;
+  color: white;
+  font-style: italic;
+}
+
+.portal_panel .login_interface input[type=submit] {
+  border-radius: 0px;
+  color: black;
+  border-bottom: 1px solid #ff6d19;
+  width: 60px;
+  height: 30px;
+  box-shadow: 0 0 0;
+  font-weight: bold;
+  background-color: transparent;
+}
+
+.portal_panel .login_interface input[type=submit]:hover {
+  border-bottom: 1px solid #ff6d19;
+  opacity: 1;
+  color: white;
+  transition: 0.2s;
+}
