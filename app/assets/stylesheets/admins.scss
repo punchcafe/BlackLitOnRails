@@ -2,9 +2,55 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
+  padding: 0px;
+  margin: 0px;
   text-align: center;
 }
 
+.admin_nav .logo{
+  padding-left: 10px;
+  padding-right: 10px;
+  border-left: solid 1px white;
+  border-right: solid 1px white;
+  font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+  display: inline-block;
+  height: 100%;
+  line-height: 50px;
+}
+
+.admin_nav .logo:hover{
+  background-color: #ff6d19;
+  transition: 0.3s;
+}
+
+.admin_nav .current_admin{
+  padding-left: 10px;
+  padding-right: 10px;
+  border-left: solid 1px white;
+  border-right: solid 1px white;
+  font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+  display: inline-block;
+  height: 100%;
+  line-height: 50px;
+  color: darkgrey;
+  font-size: 13px;
+}
+
+.admin_nav .current_admin:hover{
+  background-color: #ff6d19;
+  transition: 0.3s;
+  color: white;
+}
+
+.admin_nav {
+  z-index: 1;
+  background-color: black;
+  font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+  color: white;
+  position: fixed;
+  width: 100%;
+  height: 50px;
+}
 
 .portal_panel {
   height: 500px;
@@ -89,4 +135,16 @@ body {
   opacity: 1;
   color: white;
   transition: 0.2s;
+}
+
+.page_content {
+  padding-top: 50px;
+  color: black;
+  height: 700px;
+}
+
+.admin_nav:hover ~.page_content{
+    opacity: 0.95;
+    filter: blur(2px);
+    transition: 0.2s;
 }
