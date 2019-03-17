@@ -31,9 +31,33 @@ body {
   font-family: New Century Schoolbook, TeX Gyre Schola, serif;
   display: inline-block;
   height: 100%;
-  line-height: 50px;
+  line-height: 20px;
   color: darkgrey;
   font-size: 13px;
+}
+
+.admin_nav .current_admin a {
+  font-family: sans-serif;
+  padding: 2px 4px 2px 4px;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+  color: darkgrey;
+}
+
+.admin_nav .current_admin:hover a {
+  text-decoration: none;
+  font-weight: bold;
+  font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+  border: 1px solid white;
+  color: white;
+  transition: 0.2s;
+}
+
+.admin_nav .current_admin:hover a:hover {
+  background-color: white;
+  color: #ff6d19;
+  transition: 0.2s;
 }
 
 .admin_nav .current_admin:hover{
