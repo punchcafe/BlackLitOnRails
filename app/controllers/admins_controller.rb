@@ -3,7 +3,7 @@ class AdminsController < ApplicationController
     redirect_to admindashboard_path if session['admin']
   end
   def dashboard
-    p session['admin']
-    @admin = session['admin']['email']
+    redirect_to adminportal_path unless session['admin']
+    @admin = session['admin']['email'] if session['admin']
   end
 end
