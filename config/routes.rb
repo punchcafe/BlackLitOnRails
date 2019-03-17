@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get '/adminportal' => 'admins#portal'
   get '/admindashboard' => 'admins#dashboard'
   post '/session' => 'sessions#create'
+  delete '/session' => 'sessions#delete'
 end

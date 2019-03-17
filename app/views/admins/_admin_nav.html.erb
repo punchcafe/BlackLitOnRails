@@ -4,6 +4,7 @@
   </div>
    Admin CP : EPISODES    |    PAGES     |    ADMINS    |
   <div class="current_admin">
-    <i>Logged in: </i><b><%= @admin %></b>
+    <i>Logged in: </i><b><%= @admin %></b><br>
+    <%= link_to 'Log out', session_path, :method => :delete %>
   </div>
 </nav>

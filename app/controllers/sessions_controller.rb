@@ -15,4 +15,8 @@ class SessionsController < ApplicationController
     destination = session['admin'] ? admindashboard_path : adminportal_path
     redirect_to destination
   end
+  def delete
+    session['admin'] = nil
+    redirect_to adminportal_path
+  end
 end
