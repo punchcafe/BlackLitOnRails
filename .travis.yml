@@ -3,4 +3,4 @@ rvm:
  - 2.6.0
 
 before_script:
- - psql -c 'create database BlackLitOnRails_test;' -U postgres
+ - RAILS_ENV=test bundle exec rake db:create
