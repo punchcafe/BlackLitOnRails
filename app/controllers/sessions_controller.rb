@@ -1,20 +1,14 @@
+require_relative '../helpers/sessions_helper.rb'
+
 class SessionsController < ApplicationController
+  include SessionsHelper
+
   def create
-    admin = case Admin.where(email: params['email']).length
-                      when 1 then Admin.where(email: params['email'])[0]
-                      when 0 then false
-                      else raise(DatabaseError)
-    end
-    if admin
-      session['admin'] = admin if admin.encrypted_password == params['password']
-      p "success" if admin.encrypted_password == params['password']
-      p "failure" unless admin.encrypted_password == params['password']
-    end
-    p 'your session'
-    p session['admin']
-    destination = session['admin'] ? admindashboard_path : adminportal_path
+    create_session(admin_lookup_by_params) if admin_lookup_by_params && authenticate_sign_in
+    destination = current_admin ? admindashboard_path : adminportal_path
     redirect_to destination
   end
+
   def delete
     session['admin'] = nil
     redirect_to adminportal_path
