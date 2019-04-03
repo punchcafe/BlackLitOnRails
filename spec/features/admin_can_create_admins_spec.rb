@@ -8,9 +8,9 @@ RSpec.feature 'Admin can manage admins', type: :feature do
     auto_sign_in
     click_on 'admins'
     click_on 'create admin'
-    fill_in 'email', with: "newkid@yugioh.com"
-    fill_in 'password', with: "kungfury"
-    click_on 'create'
+    fill_in 'Email', with: "newkid@yugioh.com"
+    fill_in 'Password', with: "kungfury"
+    click_on 'Create'
     click_on 'Log out'
     visit('/adminportal')
     fill_in 'email', with:"newkid@yugioh.com"
