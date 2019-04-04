@@ -9,7 +9,7 @@ RSpec.feature 'Admin can manage admins', type: :feature do
     auto_sign_in
     click_on 'admins'
     expect("testboy@aol.com").to appear_before("scapegoat@sorry.com")
-    page.all('delete')[1].click
+    all('.delete_admin')[1].click
     click_on 'admins'
     expect(page).to have_content("testboy@aol.com")
     expect(page).to_not have_content("scapegoat@sorry.com")

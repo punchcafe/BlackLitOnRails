@@ -20,4 +20,8 @@ class AdminsController < ApplicationController
     )
     redirect_to admins_path
   end
+  def destroy
+    Admin.find(params['id']).destroy
+    redirect_to admins_path
+  end
 end
