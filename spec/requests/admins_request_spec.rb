@@ -1,4 +1,5 @@
 describe "Admin create destroy", type: :request do
+
   it "admin cannot destroy self" do
     @admin = create(:admin)
     auto_sign_in
@@ -7,6 +8,12 @@ describe "Admin create destroy", type: :request do
     }.to_not change(Admin, :count)
     expect(response).to redirect_to admins_path
   end
+
+  it "public may not destroy"
+  #create the admin but don't sign in
+
+  it "public may not create"
+  #check for difference
 
   private
 

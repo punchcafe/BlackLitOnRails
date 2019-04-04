@@ -15,4 +15,6 @@ RSpec.feature 'Admin can manage admins', type: :feature do
     expect(page).to_not have_content("scapegoat@sorry.com")
   end
 
+  scenario 'admin cannot see own delete button'
+
 end
