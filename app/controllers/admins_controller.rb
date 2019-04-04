@@ -21,7 +21,7 @@ class AdminsController < ApplicationController
     redirect_to admins_path
   end
   def destroy
-    Admin.find(params['id']).destroy
+    Admin.find(params['id']).destroy unless current_admin['id'] == params['id'].to_i
     redirect_to admins_path
   end
 end
