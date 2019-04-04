@@ -1,6 +1,8 @@
 <%= render "admins/admin_nav" %>
-<%= link_to 'create admin', new_admin_path %>
-<h1> Admins </h1>
-<% @admins.each do |admin| %>
-<%= admin.email %><br>
-<% end %>
+<div class="page_content">
+  <%= link_to 'create admin', new_admin_path %>
+  <h1> Admins </h1>
+  <% @admins.each do |admin| %>
+  <%= admin.email %><br>
+  <% end %>
+</div>
