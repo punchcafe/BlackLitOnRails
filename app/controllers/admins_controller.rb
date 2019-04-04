@@ -6,6 +6,7 @@ class AdminsController < ApplicationController
     current_admin ? @current_admin = current_admin['email'] : redirect_to(adminportal_path)
   end
   def index
+    @admins = Admin.all
     @current_admin = current_admin['email']
   end
   def new
