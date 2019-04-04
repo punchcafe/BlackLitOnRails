@@ -1,24 +1,27 @@
-# README
+# BlackLitOnRails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**This is still a work in progress**
 
-Things you may want to cover:
+BlackLitOnRails is a rails based website for the podcast *Black Lit Function*.
+You can see the deployed version [here](http://blacklitfunction.herokuapp.com/).
 
-* Ruby version
+## Getting started
 
-* System dependencies
+### Database
+BlackLitOnRails uses a `postgresql` connection, so you'll need to [download](https://www.postgresql.org/download/), install and start running `postgresql` locally.
 
-* Configuration
+### Set up
+- clone this repo so you have it locally
+- run `> $ bundle install` to download all gem file dependencies
+- run
+```bash
+rails db:create
+rails db:migrate
+```
+to generate the necessary database configurations.
 
-* Database creation
+### Running a server
+- run `> $ rails server` to host the site locally. Usually it will be hosted on `localhost:3000`.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Running testing suites
+- run `> $ rspec` in the root directory to execute all rspec test suites.
