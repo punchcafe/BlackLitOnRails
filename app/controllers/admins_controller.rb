@@ -14,6 +14,7 @@ class AdminsController < ApplicationController
     @admin = Admin.new()
   end
   def create
+    raise('Unauthorized action') unless current_admin
     Admin.create(
       email: params['admin']['email'],
       encrypted_password: params['admin']['password']

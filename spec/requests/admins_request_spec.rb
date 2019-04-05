@@ -16,8 +16,11 @@ describe "Admin create destroy", type: :request do
     }.to raise_error('Unauthorized action')
   end
   #create the admin but don't sign in
-
-  it "public may not create"
+  it "public may not create" do
+    expect {
+      post "/admins", :params => { :admin => {email: "scapegoat@netscape.com", password: "easy"}}
+    }.to raise_error('Unauthorized action')
+  end
   #check for difference
 
   private
