@@ -1,0 +1,11 @@
+<%= render "admins/admin_nav" %>
+<div class="page_content">
+  <%= link_to 'create admin', new_admin_path %>
+  <h1> Admins </h1>
+  <% @admins.each do |admin| %>
+    <%= admin.email %>
+    <% unless admin.id == @current_admin['id'] %>
+      <%= link_to 'delete', admin, method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete_admin' %><br>
+    <% end %>
+  <% end %>
+</div>
