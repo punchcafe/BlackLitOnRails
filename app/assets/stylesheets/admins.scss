@@ -14,7 +14,6 @@ body {
 .admin_nav {
   overflow: hidden;
   z-index: 1;
-  background-color: white;
   font-family: 'Oswald', sans-serif;
   color: black;
   position: fixed;
@@ -50,7 +49,7 @@ body {
   padding-left: 5px;
   padding-right: 5px;
   border: 1px solid transparent;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid transparent;
 }
 
 .admin_nav .links a:hover {
@@ -100,7 +99,7 @@ body {
 }
 
 .admin_nav:hover ~.page_content{
-    opacity: 0.95;
+    opacity: 0.8;
     filter: blur(2px);
     transition: 0.2s;
 }
@@ -187,15 +186,84 @@ body {
 }
 
 .portal_panel .login_interface input[type=submit]:hover {
-  border-bottom: 1px solid #ff6d19;
-  background-color: #ff6d19;
+  border-bottom: 1px solid #ed3446;
+  background-color: #ed3446;
   opacity: 1;
   color: white;
   transition: 0.2s;
 }
 
 .page_content {
+  display: inline-block;
+  width: 67%;
+  min-width: 500px;
+  max-width: 800px;
   padding-top: 50px;
   color: black;
   height: 700px;
+}
+
+.admin {
+  overflow: hidden;
+  text-align: right;
+  line-height: 50px;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid darkgrey;
+  margin: 20px 0px 20px 0px;
+}
+
+.adminself {
+  overflow: hidden;
+  text-align: left;
+  padding-left: 4%;
+  line-height: 50px;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid darkgrey;
+  margin: 20px 0px 20px 0px;
+}
+
+.adminself:hover {
+  border: 1px black solid;
+  transition: 0.6s;
+}
+
+.admin:hover {
+  transition: 0.6s;
+  border: 1px solid #ed3446;
+}
+
+.admin .email_holder{
+  text-align: left;
+  vertical-align: top;
+  height: 100%;
+  padding-left: 4%;
+  width: 80%;
+  display: inline-block;
+}
+
+.admin:hover .delete_holder{
+  transition: 0.6s;
+  background-color: #ed3446;
+  border-left: 1px solid #ed3446;
+}
+
+.admin:hover .delete_holder a{
+  transition: 0.3s;
+  color: white;
+}
+
+.admin .delete_holder a{
+  text-decoration: none;
+  color: darkgrey;
+  font-family: 'Oswald', sans-serif;
+}
+
+.admin .delete_holder{
+  text-align: center;
+  border-left: 1px solid darkgrey;
+  height: 100%;
+  width: 15%;
+  display: inline-block;
 }
