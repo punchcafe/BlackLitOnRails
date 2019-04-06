@@ -6,7 +6,6 @@ describe "Admin create destroy", type: :request do
     expect {
       delete "/admins/#{@admin.id}", :params => { id: @admin.id}
     }.to_not change(Admin, :count)
-    expect(response).to redirect_to admins_path
   end
 
   it "public may not destroy" do

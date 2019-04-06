@@ -3,14 +3,14 @@ class AdminsController < ApplicationController
     redirect_to admindashboard_path if current_admin
   end
   def dashboard
-    current_admin ? @current_admin = current_admin['email'] : redirect_to(adminportal_path)
+    current_admin ? @current_admin = current_admin : redirect_to(adminportal_path)
   end
   def index
     @admins = Admin.all
-    @current_admin = current_admin['email']
+    @current_admin = current_admin
   end
   def new
-    @current_admin = current_admin['email']
+    @current_admin = current_admin
     @admin = Admin.new()
   end
   def create
