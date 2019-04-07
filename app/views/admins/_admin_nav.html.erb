@@ -2,7 +2,9 @@
   <div class="logo">
     BLACK LIT FUNCTION
   </div>
-   Admin CP : EPISODES    |    PAGES     |    <%= link_to 'admins', admins_path %>    |
+  <div class="links">
+    <%= link_to 'episodes', admins_path %>   <%= link_to 'pages', admins_path %>   <%= link_to 'admins', admins_path %>
+  </div>
   <div class="current_admin">
     <i>Logged in: </i><b><%= @current_admin["email"] %></b><br>
     <%= link_to 'Log out', session_path, :method => :delete %>

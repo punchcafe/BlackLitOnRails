@@ -1,5 +1,5 @@
 require 'rails_helper'
-require_relative '../helpers/web_helpers.rb'
+require_relative '../../helpers/web_helpers.rb'
 
 RSpec.feature 'Admin can manage admins', type: :feature do
 
@@ -19,11 +19,11 @@ RSpec.feature 'Admin can manage admins', type: :feature do
     @admin = create(:admin)
     auto_sign_in
     click_on 'admins'
-    expect(page).to_not have_content("delete")
+    expect(page).to_not have_content("X")
     @admin2 = create(:admin, email: 'scapegoat@sorry.com')
     visit('/admindashboard')
     click_on 'admins'
-    expect(page).to have_content("delete")
+    expect(page).to have_content("X")
   end
 
 end
