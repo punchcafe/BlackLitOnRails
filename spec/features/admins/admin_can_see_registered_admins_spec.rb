@@ -1,5 +1,5 @@
 require 'rails_helper'
-require_relative '../helpers/web_helpers.rb'
+require_relative '../../helpers/web_helpers.rb'
 
 RSpec.feature 'Admin can see registered admins', type: :feature do
 
