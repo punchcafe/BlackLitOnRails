@@ -4,6 +4,7 @@ class EpisodesController < ApplicationController
   # GET /episodes
   # GET /episodes.json
   def index
+    @current_admin = current_admin
     @episodes = Episode.all
   end
 
@@ -14,6 +15,7 @@ class EpisodesController < ApplicationController
 
   # GET /episodes/new
   def new
+    @current_admin = current_admin
     @episode = Episode.new
   end
 
@@ -28,7 +30,7 @@ class EpisodesController < ApplicationController
 
     respond_to do |format|
       if @episode.save
-        format.html { redirect_to @episode, notice: 'Episode was successfully created.' }
+        format.html { redirect_to admin_episodes_path, notice: 'Episode was successfully created.' }
         format.json { render :show, status: :created, location: @episode }
       else
         format.html { render :new }
@@ -69,6 +71,6 @@ class EpisodesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def episode_params
-      params.fetch(:episode, {})
+      params.require(:episode).permit(:episode_name, :description, :spotify_link, :soundcloud_link, :itunes_link)
     end
 end

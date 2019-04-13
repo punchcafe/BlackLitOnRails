@@ -1,3 +1,4 @@
+<%= render "admins/admin_nav" %>
 <p id="notice"><%= notice %></p>
 
 <h1>Episodes</h1>
@@ -12,9 +13,14 @@
   <tbody>
     <% @episodes.each do |episode| %>
       <tr>
-        <td><%= link_to 'Show', episode %></td>
-        <td><%= link_to 'Edit', edit_episode_path(episode) %></td>
-        <td><%= link_to 'Destroy', episode, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= episode.episode_name %></td>
+        <td><%= episode.description %></td>
+      </tr>
+
+      <tr>
+        <td><%= link_to 'Show', admin_episode_path(episode) %></td>
+        <td><%= link_to 'Edit', edit_admin_episode_path(episode) %></td>
+        <td><%= link_to 'Destroy', admin_episode_path(episode), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Episode', new_episode_path %>
+<%= link_to 'new', new_admin_episode_path %>
