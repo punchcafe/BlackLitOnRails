@@ -58,7 +58,7 @@ class EpisodesController < ApplicationController
   def destroy
     @episode.destroy
     respond_to do |format|
-      format.html { redirect_to episodes_url, notice: 'Episode was successfully destroyed.' }
+      format.html { redirect_to admin_episodes_url, notice: 'Episode was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
