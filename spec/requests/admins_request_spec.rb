@@ -12,13 +12,13 @@ describe "Admin create destroy", type: :request do
     @admin = create(:admin)
     expect {
       delete "/admins/#{@admin.id}", :params => { id: @admin.id}
-    }.to raise_error('Unauthorized action')
+    }.to_not change(Admin, :count)
   end
   #create the admin but don't sign in
   it "public may not create" do
     expect {
       post "/admins", :params => { :admin => {email: "scapegoat@netscape.com", password: "easy"}}
-    }.to raise_error('Unauthorized action')
+    }.to_not change(Episode, :count)
   end
   #check for difference
 
