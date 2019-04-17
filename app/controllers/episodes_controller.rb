@@ -1,25 +1,22 @@
 class EpisodesController < ApplicationController
   before_action :set_episode, only: [:show, :edit, :update, :destroy]
+  before_action :boot_anonymous, only: [:index, :show, :new, :edit]
 
   def index
-    redirect_to adminportal_path unless current_admin
     @current_admin = current_admin
     @episodes = Episode.all
   end
 
   def show
-    redirect_to adminportal_path unless current_admin
     @current_admin = current_admin
   end
 
   def new
-    redirect_to adminportal_path unless current_admin
     @current_admin = current_admin
     @episode = Episode.new
   end
 
   def edit
-    redirect_to adminportal_path unless current_admin
     @current_admin = current_admin
   end
 
@@ -61,6 +58,10 @@ class EpisodesController < ApplicationController
   end
 
   private
+
+    def boot_anonymous
+      redirect_to adminportal_path unless current_admin
+    end
 
     def set_episode
       @episode = Episode.find(params[:id])
