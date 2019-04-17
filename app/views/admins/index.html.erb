@@ -1,4 +1,5 @@
 <%= render "admins/admin_nav" %>
+<div class="notice"><%= notice %></div>
 <div class="page_content">
   <h1> Admins </h1>
   <%= link_to 'create admin', new_admin_path %>
@@ -10,9 +11,8 @@
         <% unless admin.id == @current_admin['id'] %>
         <div class="delete_holder">
           <%= link_to 'X', admin, method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete_admin' %><br>
-</div>
+     </div>
         <% end %>
-
     </div>
   <% end %>
 </div>
