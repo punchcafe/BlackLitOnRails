@@ -2,24 +2,29 @@ class EpisodesController < ApplicationController
   before_action :set_episode, only: [:show, :edit, :update, :destroy]
 
   def index
+    redirect_to adminportal_path unless current_admin
     @current_admin = current_admin
     @episodes = Episode.all
   end
 
   def show
+    redirect_to adminportal_path unless current_admin
     @current_admin = current_admin
   end
 
   def new
+    redirect_to adminportal_path unless current_admin
     @current_admin = current_admin
     @episode = Episode.new
   end
 
   def edit
+    redirect_to adminportal_path unless current_admin
     @current_admin = current_admin
   end
 
   def create
+    return 0 unless current_admin
     @episode = Episode.new(episode_params)
 
     respond_to do |format|
@@ -34,6 +39,7 @@ class EpisodesController < ApplicationController
   end
 
   def update
+    return 0 unless current_admin
     respond_to do |format|
       if @episode.update(episode_params)
         format.html { redirect_to admin_episode_path(@episode), notice: 'Episode was successfully updated.' }
@@ -46,6 +52,7 @@ class EpisodesController < ApplicationController
   end
 
   def destroy
+    return 0 unless current_admin
     @episode.destroy
     respond_to do |format|
       format.html { redirect_to admin_episodes_url, notice: 'Episode was successfully destroyed.' }
