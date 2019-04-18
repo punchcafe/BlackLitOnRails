@@ -14,7 +14,11 @@
     <% @episodes.each do |episode| %>
       <tr>
         <td><%= episode.episode_name %></td>
+        <% if episode.episode_image.attached? %>
+        <td><%= image_tag(episode.episode_image) %></td>
+        <% end %>
         <td><%= episode.description %></td>
+
       </tr>
 
       <tr>

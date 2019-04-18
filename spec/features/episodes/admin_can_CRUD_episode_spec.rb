@@ -29,13 +29,13 @@ RSpec.feature 'Admin can CRUD an episode without a picture', type: :feature do
     fill_in 'Spotify Link', with: "spotify.com/lol"
     fill_in 'Soundcloud Link', with: "soundlcoud.com/lol"
     fill_in 'Itunes Link', with: "itunes.com/lol"
-    attach_file("Episode Image", Rails.root + "spec/fixtures/portal_logo.png")
+    attach_file("Episode Image", Rails.root + "spec/fixtures/episode_image.png")
     click_on 'Create'
     click_on 'episodes'
 
     expect(page).to have_content("the book")
     expect(page).to have_content("this was the best book ever written by anyone anywhere, ever.")
-    expect(page).to have_css("img[src*='w3schools']")
+    expect(page).to have_css("img[src*='episode_image.png']")
   end
 
 

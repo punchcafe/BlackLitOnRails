@@ -68,6 +68,6 @@ class EpisodesController < ApplicationController
     end
 
     def episode_params
-      params.require(:episode).permit(:episode_name, :description, :spotify_link, :soundcloud_link, :itunes_link)
+      params.require(:episode).permit(:episode_name, :description, :spotify_link, :soundcloud_link, :itunes_link, :episode_image)
     end
 end
