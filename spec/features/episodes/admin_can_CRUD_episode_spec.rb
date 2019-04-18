@@ -63,4 +63,18 @@ RSpec.feature 'Admin can CRUD an episode without a picture', type: :feature do
     expect(page).to have_content("new description")
   end
 
+  scenario 'Admin can edit episode images' do
+    @admin = create(:admin)
+    auto_sign_in
+    auto_create_episode_with_image
+    click_on 'episodes'
+    expect(page).to have_css("img[src*='episode_image.png']")
+    click_on "Edit"
+    attach_file("Episode Image", Rails.root + "spec/fixtures/new_ep_img.jpg")
+    click_on 'Update Episode'
+    click_on 'episodes'
+    expect(page).to_not have_css("img[src*='episode_image.png']")
+    expect(page).to have_css("img[src*='new_ep_img.jpg']")
+  end
+
 end

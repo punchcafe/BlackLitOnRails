@@ -21,6 +21,7 @@ class EpisodesController < ApplicationController
   end
 
   def create
+    
     return 0 unless current_admin
     @episode = Episode.new(episode_params)
 
