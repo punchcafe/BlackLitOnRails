@@ -1,3 +1,5 @@
+require 'bcrypt'
+
 FactoryBot.define do
   factory :episode do
     episode_name {"scapegoat@netscape.com"}
@@ -9,6 +11,8 @@ FactoryBot.define do
 
   factory :admin do
     email { "testboy@aol.com" }
-    encrypted_password  { "helloworld" }
+    encrypted_password { ENV["hashsalt"] ? ENV["hashsalt"] : "" + BCrypt::Password.create("helloworld") }
+    #encrypted_password  "$2a$10$ZzNU2b8bUGtj0YffX9EyGeQUjS3Yb77MYreZnuLiFhBAegh0Hv.M2"
+    #helloworld
   end
 end

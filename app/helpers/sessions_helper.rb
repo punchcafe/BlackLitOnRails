@@ -1,3 +1,5 @@
+require 'bcrypt'
+
 module SessionsHelper
   def admin_lookup_by_params
     lookup = Admin.where(email: params['email'])
@@ -9,7 +11,9 @@ module SessionsHelper
   end
 
   def authenticate_sign_in
-    return admin_lookup_by_params.encrypted_password == params['password']
+    salt = ENV['hashsalt'] ? ENV['hashsalt'] : ""
+    admin_hash = admin_lookup_by_params.encrypted_password
+    return BCrypt::Password.new(salt + admin_hash) == params['password']
   end
 
   def create_session(admin)

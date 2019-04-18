@@ -1,3 +1,5 @@
+require 'bcrypt'
+
 class AdminsController < ApplicationController
   def portal
     redirect_to admindashboard_path if current_admin
@@ -19,9 +21,10 @@ class AdminsController < ApplicationController
 
   def create
     return 0 unless current_admin
+    encrypted_password = BCrypt::Password.create(params['admin']['password'])
     @admin = Admin.new(
       email: params['admin']['email'],
-      encrypted_password: params['admin']['password']
+      encrypted_password: encrypted_password
     )
     respond_to do |format|
       if @admin.save
