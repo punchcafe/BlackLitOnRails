@@ -7,8 +7,15 @@ Rails.application.routes.draw do
   resources :admins
 
   resource :admin do
-    resources :episodes
+    resources :episodes do
+      resource :episodeimage, only: [:destroy]
+    end
   end
+
+
+
+
+  # DELETE '/admin/episodes/:id/episode_image'
 
   post '/session' => 'sessions#create'
   delete '/session' => 'sessions#delete'

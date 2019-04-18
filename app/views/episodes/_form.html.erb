@@ -22,6 +22,10 @@
   <%= form.text_field :itunes_link %>
   <%= form.label :episode_image, "Episode Image" %>
   <%= form.file_field :episode_image %>
+  <% if @episode.episode_image.attached? %>
+  <%= link_to 'Delete Picture', "/admin/episodes/#{@episode.id}/episodeimage", method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+
   <div class="actions">
     <%= form.submit %>
   </div>
