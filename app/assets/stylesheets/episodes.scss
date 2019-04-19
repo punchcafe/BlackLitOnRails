@@ -1,3 +1,82 @@
-// Place all the styles related to the episodes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+label {
+  display: none;
+}
+
+.episode_form {
+  display: inline-block;
+  width: 55%;
+  min-width: 500px;
+  text-align: center;
+}
+
+.episode_input {
+  padding: 10px 0px 10px 0px;
+  width: 100%;
+  text-align: center;
+}
+
+.episode_input .text_input {
+  min-height: 25px;
+  width: 100%;
+  font-weight: bold;
+  box-shadow: 0px 3px 2px black;
+  color: white;
+  background-color: black;
+  text-align: center;
+  border-radius: 8px;
+  border: 0px;
+}
+
+.episode_input .text_input:hover {
+  color: white;
+  border: 0px;
+  transition: 0.2s;
+  opacity: 0.8;
+  background-color: #ff6d19;
+}
+
+.episode_input .text_input::placeholder {
+  font-weight: lighter;
+  font-style: italic;
+}
+
+.episode_input textarea {
+  padding-top: 8px;
+  height: 85px;
+  background-color: green;
+}
+
+.form_divider {
+  border-bottom: solid #ff6d19 1px;
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+  letter-spacing: 2.5px;
+  margin: 10px 0 10px 0;
+  padding: 0 0 5px 0;
+}
+
+input[type=submit] {
+  margin-top: 10px;
+  border: 0px;
+  color: black;
+  border-bottom: 1px solid #ff6d19;
+  height: 30px;
+  font-weight: bold;
+  background-color: transparent;
+}
+
+input[type=submit]:hover {
+  border-bottom: 1px solid #ff6d19;
+  background-color: #ff6d19;
+  opacity: 1;
+  color: white;
+  transition: 0.2s;
+}
+input[type=file] {
+  font-style: italic;
+  width: 100%;
+  border-bottom: 1px solid #ff6d19;
+  opacity: 1;
+  color: black;
+  transition: 0.2s;
+}
