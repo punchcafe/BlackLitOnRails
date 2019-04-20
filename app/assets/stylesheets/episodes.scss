@@ -1,3 +1,61 @@
+.index_episode {
+  overflow: hidden;
+  height: 85px;
+  display: inline-block;
+  width: 100%;
+  min-width: 500px;
+  text-align: left;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+.index_episode .image_holder {
+  height: 100%;
+  display: inline-block;
+  width: 20%;
+  overflow: hidden;
+}
+
+.index_episode .image_holder img {
+  height: 100%;
+}
+
+.index_episode .information {
+  height: 100%;
+  margin-left: 2%;
+  text-align: left;
+  display: inline-block;
+  width: 45%;
+  overflow: hidden;
+}
+
+.index_episode .information .name{
+  width: 100%;
+  border-bottom: 1px solid black;
+  padding: 1% 0 3% 0;
+  margin: 5px 0 5px 0;
+  height: 20%;
+}
+.index_episode .information .description{
+  font-style: italic;
+  font-size: 0.9em;
+  height: 65%;
+}
+
+.index_episode .links {
+  display: inline-block;
+  width: 19%;
+  overflow: hidden;
+}
+.index_episode .management_panel {
+  vertical-align: middle;
+  height: 100%;
+  display: inline-block;
+  padding: 0 3% 0 3%;
+  width: 5%;
+  overflow: hidden;
+}
+
 label {
   display: none;
 }
