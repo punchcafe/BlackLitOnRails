@@ -1,8 +1,9 @@
 <%= render "admins/admin_nav" %>
 <p id="notice"><%= notice %></p>
 <div class="page_content">
-  <h1>Episodes</h1>
-  <%= link_to 'new', new_admin_episode_path %>
+  <div class="new_episode_link">
+    <%= link_to 'new', new_admin_episode_path%>
+  </div>
   <br>
   <% @episodes.each do |episode| %>
     <div class="index_episode">
@@ -20,12 +21,17 @@
         </div>
       </div>
       <div class="links">
-        icons
+        <%= image_tag("/icon-spotify.png") %>
+        <%= image_tag("/icon-itunes.png") %>
+        <%= image_tag("/icon-soundcloud.png") %>
       </div>
       <div class="management_panel">
-        <%= link_to 'Edit', edit_admin_episode_path(episode) %>
-        <br>
-        <%= link_to 'Delete', admin_episode_path(episode), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <div class="edit">
+          <%= link_to 'Edit', edit_admin_episode_path(episode) %>
+        </div>
+        <div class="delete">
+          <%= link_to 'Delete', admin_episode_path(episode), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
       </div>
     </div>
   <% end %>
