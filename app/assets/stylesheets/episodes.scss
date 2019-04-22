@@ -97,25 +97,41 @@
 }
 
 .index_episode .management_panel {
+  text-align: right;
   vertical-align: top;
   height: 100%;
   display: inline-block;
-  padding: 0 3% 0 3%;
-  width: 5%;
+  padding: 10px 0 10px 0;
+  width: 8%;
   overflow: hidden;
 }
 
 .index_episode .management_panel div {
-  height: 50%;
+  text-align: right;
+  height: 30%;
+  padding-top: 5px;
 }
 
 .index_episode .management_panel div a {
+  border: 1px solid transparent;
+  padding: 2px 4px 2px 4px;
   letter-spacing: 1px;
-  height: 100%;
   font-family: 'Oswald', sans-serif;
   color: black;
   text-decoration: none;
   font-size: 0.9em;
+}
+
+.index_episode .management_panel div a:hover {
+  transition: 0.3s;
+  border-bottom: 1px solid orange;
+}
+
+.index_episode .management_panel div .delete_button:hover {
+  transition: 0.2s;
+  border-bottom: 1px solid #e02f58;
+  background-color: #e02f58;
+  color: white;
 }
 
 label {
