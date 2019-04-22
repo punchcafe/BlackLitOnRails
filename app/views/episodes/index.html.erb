@@ -21,9 +21,9 @@
         </div>
       </div>
       <div class="links">
-        <%= image_tag("/icon-spotify.png") %>
-        <%= image_tag("/icon-itunes.png") %>
-        <%= image_tag("/icon-soundcloud.png") %>
+        <%= image_tag("/icon-spotify.png") unless episode.spotify_link == "" %>
+        <%= image_tag("/icon-itunes.png") unless episode.itunes_link == "" %>
+        <%= image_tag("/icon-soundcloud.png") unless episode.soundcloud_link == "" %>
       </div>
       <div class="management_panel">
         <div class="edit">

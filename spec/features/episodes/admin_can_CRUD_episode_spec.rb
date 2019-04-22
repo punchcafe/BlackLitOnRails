@@ -1,7 +1,7 @@
 require 'rails_helper'
 require_relative '../../helpers/web_helpers.rb'
 
-RSpec.feature 'Admin can CRUD an episode without a picture', type: :feature do
+RSpec.feature 'Admin can CRUD an episode', type: :feature do
 
   scenario 'Admin can create episodes without an episode image' do
     @admin = create(:admin)
@@ -76,5 +76,4 @@ RSpec.feature 'Admin can CRUD an episode without a picture', type: :feature do
     expect(page).to_not have_css("img[src*='episode_image.png']")
     expect(page).to have_css("img[src*='new_ep_img.jpg']")
   end
-
 end
