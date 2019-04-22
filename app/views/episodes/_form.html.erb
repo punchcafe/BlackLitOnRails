@@ -17,15 +17,16 @@
       <%= form.text_field :episode_name, class: "text_input", placeholder: "Episode Name" %>
     </div>
     <div  class="episode_input">
+      <%= form.label :description, "Episode Description" %>
+      <%= form.text_area :description, class: "text_input", placeholder: "Description"  %>
+    </div>
+    <div class="form_divider">Episode Image</div>
+    <div  class="episode_input">
       <%= form.label :episode_image, "Episode Image" %>
       <%= form.file_field :episode_image %>
       <% if @episode.episode_image.attached? %>
-        <%= link_to 'Delete Picture', "/admin/episodes/#{@episode.id}/episodeimage", method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Delete Picture', "/admin/episodes/#{@episode.id}/episodeimage", class: "delete_button", method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
-    </div>
-    <div  class="episode_input">
-      <%= form.label :description, "Episode Description" %>
-      <%= form.text_area :description, class: "text_input", placeholder: "Description"  %>
     </div>
     <div class="form_divider">Links</div>
     <div  class="episode_input">
