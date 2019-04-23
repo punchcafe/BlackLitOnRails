@@ -1,9 +1,7 @@
 <%= render "admins/admin_nav" %>
-<p id="notice"><%= notice %></p>
+<div class="notice"><%= notice %></div>
 <div class="page_content">
-  <div class="new_episode_link">
-    <%= link_to 'new', new_admin_episode_path%>
-  </div>
+  <div><%= link_to 'new', new_admin_episode_path, class: "new_episode_link" %></div>
   <br>
   <% @episodes.each do |episode| %>
     <div class="index_episode">

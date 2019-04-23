@@ -1,11 +1,5 @@
 
-.new_episode_link {
-  position: relative;
-  display: inline-block;
-  margin-bottom: 50px;
-}
-
-.new_episode_link a {
+.new_episode_link  {
   font-weight: bold;
   font-family: 'Oswald', sans-serif;
   color: black;
@@ -16,7 +10,7 @@
   border-bottom: 1px solid #ff6d19;
 }
 
-.new_episode_link a:hover {
+.new_episode_link:hover {
   color: white;
   background-color: #ff6d19;
   transition: 0.2s;
