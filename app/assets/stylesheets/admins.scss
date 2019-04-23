@@ -291,3 +291,52 @@ body {
   background-color: #ff6d19;
   transition: 0.2s;
 }
+.admin_input {
+  margin-top: 120px;
+}
+.admin_input input{
+  margin-top: 20px;
+  font-weight: bold;
+  box-shadow: 0px 3px 6px black;
+  color: white;
+  background-color: black;
+  text-align: center;
+  width: 150px;
+  height: 21px;
+  border-radius: 8px;
+  border: 0px;
+}
+
+.admin_input input:hover{
+  color: white;
+  border: 0px;
+  transition: 0.3s;
+  opacity: 0.8;
+  background-color: #ff6d19;
+}
+
+.admin_input input::placeholder {
+  font-weight: lighter;
+  font-style: italic;
+}
+
+.admin_input input[type=submit] {
+  width: auto;
+  box-shadow: 0px 0px 0px black;
+  border-radius: 0;
+  margin-top: 20px;
+  border: 0px;
+  color: black;
+  border-bottom: 1px solid #ff6d19;
+  height: 30px;
+  font-weight: bold;
+  background-color: transparent;
+}
+
+.admin_input input[type=submit]:hover {
+  border-bottom: 1px solid #ff6d19;
+  background-color: #ff6d19;
+  opacity: 1;
+  color: white;
+  transition: 0.2s;
+}

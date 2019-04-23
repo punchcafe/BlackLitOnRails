@@ -1,8 +1,10 @@
 <%= render "admins/admin_nav" %>
-<%= form_for @admin do |f| %>
-<%= f.label :email %>
-<%= f.text_field :email %>
-<%= f.label :password %>
-<%= f.password_field :password%>
-<%= f.submit :Create %>
-<% end %>
+<div class="page_content">
+  <%= form_for @admin, :html => {:class => 'admin_input'} do |f| %>
+  <%= f.label :email %>
+  <%= f.text_field :email, placeholder: "Email" %><br>
+  <%= f.label :password %>
+  <%= f.password_field :password, placeholder: "Password" %><br>
+  <%= f.submit :Create, value: "Create Admin" %>
+  <% end %>
+</div>
