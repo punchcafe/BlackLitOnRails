@@ -57,7 +57,7 @@ RSpec.feature 'Admin can CRUD an episode', type: :feature do
     click_on 'episodes'
     click_on "Edit"
     fill_in 'Episode Description', with: "new description"
-    fill_in 'Episode Number', with: "3"
+    fill_in 'Episode #', with: "3"
     click_on 'Update Episode'
     click_on 'episodes'
     expect(page).to have_content("the book")
