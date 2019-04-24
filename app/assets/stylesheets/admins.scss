@@ -175,19 +175,19 @@ body {
 }
 
 .portal_panel .login_interface input[type=submit] {
+  box-shadow: 0 0 0;
   border-radius: 0px;
   color: black;
   border-bottom: 1px solid #ff6d19;
   width: 60px;
   height: 30px;
-  box-shadow: 0 0 0;
   font-weight: bold;
   background-color: transparent;
 }
 
 .portal_panel .login_interface input[type=submit]:hover {
-  border-bottom: 1px solid #ed3446;
-  background-color: #ed3446;
+  border-bottom: 1px solid #ff6d19;
+  background-color: #ff6d19;
   opacity: 1;
   color: white;
   transition: 0.2s;
@@ -204,37 +204,35 @@ body {
 }
 
 .admin {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.9em;
   overflow: hidden;
   text-align: right;
   line-height: 50px;
   height: 50px;
-  border-radius: 10px;
-  border: 1px solid darkgrey;
   margin: 20px 0px 20px 0px;
 }
 
 .adminself {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.9em;
   overflow: hidden;
-  text-align: left;
-  padding-left: 4%;
+  text-align: right;
   line-height: 50px;
   height: 50px;
-  border-radius: 10px;
-  border: 1px solid darkgrey;
   margin: 20px 0px 20px 0px;
 }
 
 .adminself:hover {
-  border: 1px black solid;
-  transition: 0.6s;
 }
 
 .admin:hover {
-  transition: 0.6s;
-  border: 1px solid #ed3446;
+  background-color: #f2f2f2;
+  transition: 0.3s;
 }
 
 .admin .email_holder{
+  font-weight: bold;
   text-align: left;
   vertical-align: top;
   height: 100%;
@@ -244,26 +242,101 @@ body {
 }
 
 .admin:hover .delete_holder{
-  transition: 0.6s;
-  background-color: #ed3446;
-  border-left: 1px solid #ed3446;
+  transition: 0.3s;
+  border-left: 1px solid #f2f2f2;
 }
 
 .admin:hover .delete_holder a{
+  filter: none;
   transition: 0.3s;
-  color: white;
 }
 
 .admin .delete_holder a{
+  padding: 2px 4px 2px 4px;
+  border-bottom: 1px solid transparent;
   text-decoration: none;
-  color: darkgrey;
+  filter: grayscale(1);
+  color: #e02f58;
   font-family: 'Oswald', sans-serif;
+}
+
+.admin .delete_holder a:hover{
+  transition: 0.2s;
+  border-bottom: 1px solid #e02f58;
+  background-color: #e02f58;
+  color: white;
 }
 
 .admin .delete_holder{
   text-align: center;
-  border-left: 1px solid darkgrey;
+  border-left: 1px solid #f2f2f2;
   height: 100%;
   width: 15%;
   display: inline-block;
+}
+
+.new_admin_link {
+  font-weight: bold;
+  font-family: 'Oswald', sans-serif;
+  color: black;
+  text-decoration: none;
+  font-size: 22px;
+  padding: 5px 25px 5px 25px;
+  height: 32px;
+  border-bottom: 1px solid #ff6d19;
+}
+
+.new_admin_link:hover {
+  color: white;
+  background-color: #ff6d19;
+  transition: 0.2s;
+}
+.admin_input {
+  margin-top: 120px;
+}
+.admin_input input{
+  margin-top: 20px;
+  font-weight: bold;
+  box-shadow: 0px 3px 6px black;
+  color: white;
+  background-color: black;
+  text-align: center;
+  width: 150px;
+  height: 21px;
+  border-radius: 8px;
+  border: 0px;
+}
+
+.admin_input input:hover{
+  color: white;
+  border: 0px;
+  transition: 0.3s;
+  opacity: 0.8;
+  background-color: #ff6d19;
+}
+
+.admin_input input::placeholder {
+  font-weight: lighter;
+  font-style: italic;
+}
+
+.admin_input input[type=submit] {
+  width: auto;
+  box-shadow: 0px 0px 0px black;
+  border-radius: 0;
+  margin-top: 20px;
+  border: 0px;
+  color: black;
+  border-bottom: 1px solid #ff6d19;
+  height: 30px;
+  font-weight: bold;
+  background-color: transparent;
+}
+
+.admin_input input[type=submit]:hover {
+  border-bottom: 1px solid #ff6d19;
+  background-color: #ff6d19;
+  opacity: 1;
+  color: white;
+  transition: 0.2s;
 }

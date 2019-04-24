@@ -23,7 +23,7 @@ RSpec.feature 'Admin can manage admins', type: :feature do
     @admin2 = create(:admin, email: 'scapegoat@sorry.com')
     visit('/admindashboard')
     click_on 'admins'
-    expect(page).to have_content("X")
+    expect(page).to have_content("Delete")
   end
 
 end

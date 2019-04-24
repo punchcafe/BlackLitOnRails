@@ -1,35 +1,39 @@
 <%= render "admins/admin_nav" %>
-<p id="notice"><%= notice %></p>
-
-<h1>Episodes</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @episodes.each do |episode| %>
-      <tr>
-        <td><%= episode.episode_name %></td>
+<div class="notice"><%= notice %></div>
+<div class="page_content">
+  <div><%= link_to 'new', new_admin_episode_path, class: "new_episode_link" %></div>
+  <br>
+  <% @episodes.each do |episode| %>
+    <div class="index_episode">
+      <div class="image_holder">
         <% if episode.episode_image.attached? %>
-        <td><%= image_tag(episode.episode_image) %></td>
+        <%= image_tag(episode.episode_image) %>
         <% end %>
-        <td><%= episode.description %></td>
+      </div>
+      <div class="information">
+        <div class="name">
+        <%= episode.episode_name %>
+        </div>
+        <div class="description">
+          <%= episode.description %>
+        </div>
+      </div>
+      <div class="links">
+        <%= image_tag("/icon-spotify.png") unless episode.spotify_link == "" %>
+        <%= image_tag("/icon-itunes.png") unless episode.itunes_link == "" %>
+        <%= image_tag("/icon-soundcloud.png") unless episode.soundcloud_link == "" %>
+      </div>
+      <div class="management_panel">
+        <div class="edit">
+          <%= link_to 'Edit', edit_admin_episode_path(episode) %>
+        </div>
+        <div class="delete">
+          <%= link_to 'Delete', admin_episode_path(episode), class: "delete_button", method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
 
-      </tr>
-
-      <tr>
-        <td><%= link_to 'Show', admin_episode_path(episode) %></td>
-        <td><%= link_to 'Edit', edit_admin_episode_path(episode) %></td>
-        <td><%= link_to 'Delete', admin_episode_path(episode), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <br>
-
-<%= link_to 'new', new_admin_episode_path %>
