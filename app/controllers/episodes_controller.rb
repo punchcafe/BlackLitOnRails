@@ -21,7 +21,7 @@ class EpisodesController < ApplicationController
   end
 
   def create
-    
+
     return 0 unless current_admin
     @episode = Episode.new(episode_params)
 
@@ -69,6 +69,6 @@ class EpisodesController < ApplicationController
     end
 
     def episode_params
-      params.require(:episode).permit(:episode_name, :description, :spotify_link, :soundcloud_link, :itunes_link, :episode_image)
+      params.require(:episode).permit(:episode_name, :description, :spotify_link, :soundcloud_link, :itunes_link, :episode_image, :episode_number)
     end
 end

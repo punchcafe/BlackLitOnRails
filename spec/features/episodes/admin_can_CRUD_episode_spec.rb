@@ -10,6 +10,7 @@ RSpec.feature 'Admin can CRUD an episode', type: :feature do
     click_on 'episodes'
     expect(page).to have_content("the book")
     expect(page).to have_content("this was the best book ever written by anyone anywhere, ever.")
+    expect(page).to have_content("Episode 1:")
   end
 
   scenario 'Admin can create episodes with an episode image' do
