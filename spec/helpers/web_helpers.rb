@@ -10,6 +10,7 @@ def auto_create_episode
   click_on 'episodes'
   click_on 'new'
   fill_in "Episode Name", with: "the book"
+  fill_in "Episode #", with: "1"
   fill_in 'Episode Description', with: "this was the best book ever written by anyone anywhere, ever."
   fill_in 'Spotify Link', with: "spotify.com/lol"
   fill_in 'Soundcloud Link', with: "soundlcoud.com/lol"
