@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 
   def create
     create_session(admin_lookup_by_params) if admin_lookup_by_params && authenticate_sign_in
-    destination = current_admin ? admindashboard_path : adminportal_path
+    destination = current_admin ? admin_episodes_path : adminportal_path
     redirect_to destination
   end
 

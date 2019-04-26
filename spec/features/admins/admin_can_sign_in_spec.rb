@@ -17,7 +17,7 @@ RSpec.feature 'Admin can sign in', type: :feature do
     click_on 'Log in'
     expect(page).to have_content("Logged in: testboy@aol.com")
     visit('/adminportal')
-    expect(page).to have_current_path('/admindashboard')
+    expect(page).to have_current_path('/admin/episodes')
   end
 
   scenario 'signed in admin can sign out' do
