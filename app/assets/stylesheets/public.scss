@@ -1,0 +1,48 @@
+.home_banner {
+  width: 100%;
+  border-bottom: solid darkgrey 2px;
+}
+
+#logo_holder {
+  height: 275px;
+  overflow: hidden;
+}
+#large_logo {
+  width: 550px;
+}
+
+#current_episode {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  border-bottom: 2px solid white;
+}
+
+
+#current_episode img {
+  left: 0;
+  z-index: -1;
+  position: absolute;
+  filter: grayscale(1);
+  width: 100%;
+  min-height: 100%;
+}
+
+#current_episode h1 {
+  position: absolute;
+}
+
+#current_episode h2 {
+  position: absolute;
+}
+
+#next_episode {
+  color: white;
+  background-color: #3a3a3a;
+  height: 175px;
+}
+
+.public_episodes {
+  background-color: #ededed;
+}

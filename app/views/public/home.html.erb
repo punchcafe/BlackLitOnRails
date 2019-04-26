@@ -1,5 +1,21 @@
-<% @episodes.each do |episode| %>
-  <% if episode.episode_number%>
-    <%= episode.episode_name %>
+<div class="home_banner">
+<div id="logo_holder"><%= image_tag('/logo_title.png', id: "large_logo") %></div>
+<div> LINKS </div>
+</div>
+<div id="current_episode">
+  <h2>next episode!!</h2>
+  <h1>SIIICCK</h1>
+  <% if @episodes[0] %>
+    <% if @episodes[0].episode_image.attached? %>
+    <%=image_tag(@episodes[0].episode_image)%>
+    <% end %></div>
   <% end %>
+<div id="next_episode">
+  Second book
+  tomorrows
+</div>
+<div class="public_episodes">
+<% @episodes.each do |episode| %>
+  <div><%= episode.episode_name %></div>
 <% end %>
+</div>
