@@ -25,17 +25,29 @@ body {
 
 
 .admin_nav .logo{
-  line-height: 50px;
   vertical-align: top;
-  font-family: New Century Schoolbook, TeX Gyre Schola, serif;
   display: inline-block;
   height: 100%;
+  margin-right: 20px;
+}
+
+.admin_nav .logo img {
+  margin-top: 2%;
+  vertical-align: top;
+  display: inline-block;
+  height: 90%;
 }
 
 .admin_nav .links {
   vertical-align: top;
   display: inline-block;
   height: 100%;
+}
+
+.admin_nav .links .selected_link {
+  text-decoration: none;
+  transition: 0.2s;
+  border-bottom: 1px solid #ff6d19;
 }
 
 .admin_nav .links a {
@@ -63,6 +75,7 @@ body {
   line-height: 20px;
   vertical-align: top;
   padding-left: 10px;
+  margin-left: 20px;
   padding-right: 10px;
   display: inline-block;
   height: 100%;
@@ -99,7 +112,7 @@ body {
 }
 
 .admin_nav:hover ~.page_content{
-    opacity: 0.8;
+    opacity: 0.6;
     filter: blur(2px);
     transition: 0.2s;
 }

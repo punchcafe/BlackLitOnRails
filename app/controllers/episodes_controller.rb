@@ -1,5 +1,6 @@
 class EpisodesController < ApplicationController
   before_action :set_episode, only: [:show, :edit, :update, :destroy]
+  before_action :set_section_to_episodes
   before_action :boot_anonymous, only: [:index, :show, :new, :edit]
 
   def index
@@ -70,5 +71,9 @@ class EpisodesController < ApplicationController
 
     def episode_params
       params.require(:episode).permit(:episode_name, :description, :spotify_link, :soundcloud_link, :itunes_link, :episode_image, :episode_number)
+    end
+
+    def set_section_to_episodes
+      @section = "episodes"
     end
 end

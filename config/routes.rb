@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/' => 'public#home'
 
   get '/adminportal' => 'admins#portal'
-  get '/admindashboard' => 'admins#dashboard'
+  get '/admindashboard' => 'admins#index'
 
   resources :admins
 

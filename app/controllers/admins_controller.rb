@@ -1,15 +1,15 @@
 require 'bcrypt'
 
 class AdminsController < ApplicationController
-  def portal
-    redirect_to admindashboard_path if current_admin
-  end
 
-  def dashboard
-    current_admin ? @current_admin = current_admin : redirect_to(adminportal_path)
+  before_action :set_section_to_admins
+
+  def portal
+    redirect_to admin_episodes_path if current_admin
   end
 
   def index
+    redirect_to adminportal_path unless current_admin
     @admins = Admin.all
     @current_admin = current_admin
   end
@@ -44,5 +44,11 @@ class AdminsController < ApplicationController
       format.html { redirect_to admins_path, notice: 'Admin was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def set_section_to_admins
+    @section = "admins"
   end
 end
