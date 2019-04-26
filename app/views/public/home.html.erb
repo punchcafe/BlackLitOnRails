@@ -1,3 +1,5 @@
 <% @episodes.each do |episode| %>
-<%= episode.episode_name %>
+  <% if episode.episode_number%>
+    <%= episode.episode_name %>
+  <% end %>
 <% end %>
