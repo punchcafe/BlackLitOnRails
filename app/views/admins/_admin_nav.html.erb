@@ -1,9 +1,11 @@
 <nav class="admin_nav">
   <div class="logo">
-    BLACK LIT FUNCTION
+    <%=image_tag "admin_logo.png" %>
   </div>
   <div class="links">
-    <%= link_to 'episodes', admin_episodes_path %>   <div style="display: inline-block; color: lightgrey; letter-spacing: 2.5px;">pages</div>   <%= link_to 'admins', admins_path %>
+    <%= link_to 'episodes', admin_episodes_path, class: request.original_fullpath.include?("/admin/episodes") ? "selected_link" : "" %>
+    <div style="display: inline-block; color: lightgrey; letter-spacing: 2.5px;">pages</div>
+    <%= link_to 'admins', admins_path, class: request.original_fullpath.include?("/admins") ? "selected_link" : "" %>
   </div>
   <div class="current_admin">
     <i>Logged in: </i><b><%= @current_admin["email"] %></b><br>
