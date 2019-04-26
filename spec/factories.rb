@@ -2,11 +2,12 @@ require 'bcrypt'
 
 FactoryBot.define do
   factory :episode do
-    episode_name {"scapegoat@netscape.com"}
+    episode_name {"the first episode"}
     description {"easy"}
     spotify_link {"https://spotify.com/okthen"}
     soundcloud_link {"https://soundcloud.com/lol"}
     itunes_link {"https://itunes.com/okaythen"}
+    episode_number {1}
   end
 
   factory :admin do

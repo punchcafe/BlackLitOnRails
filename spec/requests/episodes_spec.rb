@@ -50,7 +50,7 @@ RSpec.describe "Episodes", type: :request do
   describe "PUT /episodes/:id" do
     it "public may not edit episode" do
       @episode = create(:episode)
-      expect(Episode.find(@episode.id).episode_name).to eq("scapegoat@netscape.com")
+      expect(Episode.find(@episode.id).episode_name).to eq("the first episode")
       expect(Episode.find(@episode.id).description).to eq("easy")
         put "/admin/episodes/#{@episode.id}", :params => {
           :episode => {
@@ -68,7 +68,7 @@ RSpec.describe "Episodes", type: :request do
     it "admin may edit episode" do
       auto_sign_in
       @episode = create(:episode)
-      expect(Episode.find(@episode.id).episode_name).to eq("scapegoat@netscape.com")
+      expect(Episode.find(@episode.id).episode_name).to eq("the first episode")
       expect(Episode.find(@episode.id).description).to eq("easy")
         put "/admin/episodes/#{@episode.id}", :params => {
           :episode => {
