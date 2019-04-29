@@ -170,7 +170,24 @@ to {
 #next_episode {
   color: white;
   background-color: #3a3a3a;
-  height: 200px;
+}
+
+#next_episode .episode_pre {
+  margin-top: 50px;
+  font-family: "Brush Script MT", cursive;
+  font-size: 2em;
+}
+
+#next_episode .next_episode_name {
+  font-family: Impact;
+  font-size: 2em;
+  margin-bottom: 70px;
+  line-height: 25px;
+}
+
+#next_episode .next_episode_name small{
+  margin: 0;
+  font-size: 0.5em;
 }
 
 .public_episodes {
