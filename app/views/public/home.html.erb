@@ -6,9 +6,16 @@
   <div class="content_width">
     <h2>Episode #00:</h2>
     <h1>THE WIND IN THE WILLOWS</h1>
-    <div class="latest_spotify_button">
-      <div class="text">Play on Spotify</div>
-      <div class="play_button">▶</div>
+    <div class="latest_spotify_button_container">
+      <div class="latest_spotify_button">
+        <div class="button_animation"><div id="casette_wheel_1"></div><div id="tape"><hr></div><div id="casette_wheel_2"></div></div>
+        <div class="text"><div style="margin-top: 10px; font-family: Impact; font-size: 0.5em; height: 10px;">LISTEN ON</div>
+        <div style="font-size: 1.5em; padding-left: 10px; padding-right: 10px; border-bottom: 2px white solid;">
+         Spotify
+         </div>
+       </div>
+        <div class="play_button">▶</div>
+      </div>
     </div>
   </div>
   <% if @episodes[0] %>
@@ -20,9 +27,9 @@
 <div id="next_episode">
   <div class="content_width">
     <div style='font-family: "Brush Script MT", cursive;'>next episode:</div>
-    <hr style="width: 30%; color: white; display: inline-block;">
+    <hr style="width: 30%; border: 1px solid white; display: inline-block;">
     Second book
-    <hr style="width: 30%; color: white; display: inline-block;">
+    <hr style="width: 30%; border: 1px solid white; display: inline-block;">
   </div>
 </div>
 <div class="public_episodes">

@@ -60,35 +60,112 @@
   bottom: 70px;
 }
 
-#current_episode .latest_spotify_button {
-  font-family: "Brush Script MT", cursive;
-  width: 220px;
-  height: 90px;
-  background: black;
-  color: white;
+#current_episode .latest_spotify_button_container {
   z-index: 1;
-  font-size: 1.9em;
   right: 30px;
   position: absolute;
   bottom: 150px;
+}
+
+#current_episode .latest_spotify_button {
+  display: inline-block;
+  font-family: "Brush Script MT", cursive;
+  width: 195px;
+  height: 85px;
+  background: black;
+  color: white;
+  font-size: 1.9em;
+  position: relative;
+  bottom: 0px;
 }
 
 #current_episode .latest_spotify_button:hover {
   transition: 0.2s;
   box-shadow: 0px 5px 10px black;
   font-family: "Brush Script MT", cursive;
-  width: 220px;
-  height: 90px;
   background: linear-gradient(#1DB954, #22ad75);
   color: white;
-  z-index: 1;
   font-size: 1.9em;
-  right: 30px;
+  bottom: 10px;
+}
+
+#current_episode .latest_spotify_button .text {
+  padding-left: 10px;
+  width: 60%;
+  position: relative;
+  height: 85px;
+}
+
+#current_episode .latest_spotify_button .play_button {
   position: absolute;
-  bottom: 155px;
+  right: 10px;
+  top: -10px;
+  height: 100%;
+  font-size: 2.8em;
+  width: 20%;
+}
+
+#current_episode .latest_spotify_button .button_animation {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#current_episode .latest_spotify_button:hover .button_animation #casette_wheel_1 {
+  left: 30px;
+  top: 20px;
+  animation:spin 4s linear infinite;
+  position: absolute;
+  border: dashed 3px rgba(255,255,255, 0.5);
+  border-radius: 30px;
+  width: 37px;
+  height: 37px;
+}
+
+#current_episode .latest_spotify_button:hover .button_animation #casette_wheel_2 {
+  right: 30px;
+  top: 20px;
+  animation:spin 4s linear infinite;
+  position: absolute;
+  border: dashed 3px rgba(255,255,255, 0.5);
+  border-radius: 30px;
+  width: 37px;
+  height: 37px;
+}
+
+#current_episode .latest_spotify_button:hover .button_animation #tape {
+  width: 73px;
+  overflow: hidden;
+  right: 62px;
+  top: 7px;
+  position: absolute;
+}
+
+#current_episode .latest_spotify_button .button_animation #tape hr {
+ display: none;
+}
+#current_episode .latest_spotify_button:hover .button_animation #tape hr {
+  display: inherit;
+  width: 400px;
+  border: dashed 1.5px rgba(255,255,255, 0.5);
+  animation: slide_tape 0.3s linear infinite;
 }
 
 
+
+
+
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+@keyframes slide_tape {
+  from {
+  margin-left: 0px;
+}
+
+to {
+  margin-left: 10px;
+}
+}
 
 #next_episode {
   color: white;
