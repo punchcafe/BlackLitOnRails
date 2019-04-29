@@ -1,21 +1,30 @@
 <div class="home_banner">
 <div id="logo_holder"><%= image_tag('/logo_title.png', id: "large_logo") %></div>
-<div> LINKS </div>
+  <div> LINKS </div>
 </div>
 <div id="current_episode">
-  <h2>next episode!!</h2>
-  <h1>SIIICCK</h1>
+  <div class="content_width">
+    <h2>Episode #00:</h2>
+    <h1>THE WIND IN THE WILLOWS</h1>
+    <div class="latest_spotify_button">Play on Spotify</div>
+  </div>
   <% if @episodes[0] %>
     <% if @episodes[0].episode_image.attached? %>
     <%=image_tag(@episodes[0].episode_image)%>
-    <% end %></div>
+    <% end %>
   <% end %>
+</div>
 <div id="next_episode">
-  Second book
-  tomorrows
+  <div class="content_width">
+    <div style='font-family: "Brush Script MT", cursive;'>next episode:</div>
+    Second book
+    tomorrows
+  </div>
 </div>
 <div class="public_episodes">
-<% @episodes.each do |episode| %>
-  <div><%= episode.episode_name %></div>
-<% end %>
+  <div class="content_width">
+    <% @episodes.each do |episode| %>
+      <div><%= episode.episode_name %></div>
+    <% end %>
+  </div>
 </div>

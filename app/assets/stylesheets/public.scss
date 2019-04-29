@@ -1,3 +1,11 @@
+.content_width {
+  position: relative;
+  min-width: 700px;
+  width: 66%;
+  height: 100%;
+  display: inline-block;
+}
+
 .home_banner {
   width: 100%;
   border-bottom: solid darkgrey 2px;
@@ -30,19 +38,50 @@
 }
 
 #current_episode h1 {
+  background-color: rgba(40, 40, 40, 0.7);
+
+  z-index: 2;
+  font-family: Impact;
+  color: white;
+  font-size: 3.5em;
+  left: 50px;
   position: absolute;
+  bottom: 0px;
 }
 
 #current_episode h2 {
+  background-color: rgba(255, 255, 255, 1);
+  color: #3a3a3a;
+  z-index: 1;
+  font-family: Impact;
+  font-size: 2.3em;
+  left: 30px;
   position: absolute;
+  bottom: 70px;
 }
+
+#current_episode .latest_spotify_button {
+  font-family: "Brush Script MT", cursive;
+  width: 220px;
+  height: 90px;
+  background-color: black;
+  color: white;
+  z-index: 1;
+  font-size: 1.9em;
+  right: 30px;
+  position: absolute;
+  bottom: 150px;
+}
+
+
 
 #next_episode {
   color: white;
   background-color: #3a3a3a;
-  height: 175px;
+  height: 200px;
 }
 
 .public_episodes {
+  border-top: 2px solid darkgrey;
   background-color: #ededed;
 }
