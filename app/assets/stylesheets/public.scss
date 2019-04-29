@@ -64,13 +64,28 @@
   font-family: "Brush Script MT", cursive;
   width: 220px;
   height: 90px;
-  background-color: black;
+  background: black;
   color: white;
   z-index: 1;
   font-size: 1.9em;
   right: 30px;
   position: absolute;
   bottom: 150px;
+}
+
+#current_episode .latest_spotify_button:hover {
+  transition: 0.2s;
+  box-shadow: 0px 5px 10px black;
+  font-family: "Brush Script MT", cursive;
+  width: 220px;
+  height: 90px;
+  background: linear-gradient(#1DB954, #22ad75);
+  color: white;
+  z-index: 1;
+  font-size: 1.9em;
+  right: 30px;
+  position: absolute;
+  bottom: 155px;
 }
 
 
