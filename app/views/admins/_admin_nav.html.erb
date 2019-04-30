@@ -2,7 +2,7 @@
   <div class="logo">
     <%=image_tag "admin_logo.png" %>
   </div>
-  <div class="links">
+  <div class="admin_links">
     <%= link_to 'episodes', admin_episodes_path, class: @section == "episodes" ? "selected_link" : "" %>
     <div style="display: inline-block; color: lightgrey; letter-spacing: 2.5px;">pages</div>
     <%= link_to 'admins', admins_path, class: @section == "admins" ? "selected_link" : "" %>

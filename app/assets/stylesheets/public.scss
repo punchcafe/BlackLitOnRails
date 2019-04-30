@@ -11,6 +11,7 @@ body {
 }
 
 .home_banner {
+  background-color: white;
   width: 100%;
   border-bottom: solid darkgrey 1px;
 }
@@ -25,7 +26,6 @@ body {
 }
 
 .links {
-
   display: inline-block;
   width: 500px;
   margin: 10px;
@@ -304,4 +304,10 @@ to {
   font-size: 0.7em;
   margin-right: 5px;
   line-height: 20px;
+}
+
+footer {
+  background-color: black;
+  border-top: solid 1px white;
+  height: 130px;
 }
