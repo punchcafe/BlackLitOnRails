@@ -28,6 +28,24 @@ RSpec.feature 'Public Episode Display', type: :feature do
     expect("im middle").to appear_before("im oldest")
   end
 
+  scenario 'episodes display their episode picture twice if latest episode' do
+    @admin = create(:admin)
+    auto_sign_in
+    auto_create_episode_with_image
+    visit('/')
+    expect(page).to have_css("img[src*='episode_image.png']", count: 2)
+  end
+
+  scenario 'episodes display their episode picture' do
+    @admin = create(:admin)
+    auto_sign_in
+    auto_create_episode_with_image
+    @later_episode = create(:episode, episode_number: 2)
+    visit('/')
+    expect(page).to have_css("img[src*='episode_image.png']", count: 1)
+  end
+
+
   scenario 'episodes contain podcast link buttons'
   scenario 'episodes dont contain podcast link buttons if not given'
 
