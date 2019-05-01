@@ -6,7 +6,10 @@ RSpec.feature 'Public Episode Display', type: :feature do
   scenario 'users can see episodes on the front page' do
     @episode = create(:episode)
     visit '/'
+    expect(page.body).to have_content("Episode 1:")
     expect(page.body).to have_content("the first episode")
+    expect(page.body).to have_content("easy")
+
   end
 
   scenario "users can't see unlisted episodes on the front page" do
@@ -24,5 +27,8 @@ RSpec.feature 'Public Episode Display', type: :feature do
     expect("im latest").to appear_before("im oldest")
     expect("im middle").to appear_before("im oldest")
   end
+
+  scenario 'episodes contain podcast link buttons'
+  scenario 'episodes dont contain podcast link buttons if not given'
 
 end
