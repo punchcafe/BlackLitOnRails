@@ -4,8 +4,10 @@
 </div>
 <div id="current_episode">
   <div class="content_width">
-    <h2>Episode #00:</h2>
-    <h1>THE WIND IN THE WILLOWS</h1>
+    <% if @episodes[0] %>
+      <h2>Episode #<%= sprintf '%02d', @episodes[0].episode_number.to_s %>:</h2>
+      <h1><%= @episodes[0].episode_name.upcase %></h1>
+    <% end %>
     <div class="latest_spotify_button_container">
       <div class="latest_spotify_button">
         <div class="button_animation"><div id="casette_wheel_1"></div><div id="tape"><hr></div><div id="casette_wheel_2"></div></div>

@@ -236,6 +236,13 @@ to {
 }
 
 .public_episode {
+  border-top: solid 2px transparent;
+  border-image:
+    linear-gradient(
+      to right,
+      #1DB954,
+      #22ad75
+    ) 25% 25%;
   overflow: hidden;
   display: inline-block;
   background-color: white;
@@ -308,6 +315,12 @@ to {
 
 footer {
   background-color: black;
-  border-top: solid 1px white;
+  border-top: solid 4px transparent;
+  border-image:
+    linear-gradient(
+      to right,
+      #1DB954,
+      #22ad75
+    ) 100% 0 0;
   height: 130px;
 }
