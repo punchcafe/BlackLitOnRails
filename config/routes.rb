@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :admins
 
   resource :admin do
+    resources :public_text, only: [:edit, :update, :index]
     resources :episodes do
       resource :episodeimage, only: [:destroy]
     end
