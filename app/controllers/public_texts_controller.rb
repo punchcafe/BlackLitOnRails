@@ -1,0 +1,2 @@
+class PublicTextsController < ApplicationController
+end

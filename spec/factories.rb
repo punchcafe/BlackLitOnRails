@@ -1,6 +1,11 @@
 require 'bcrypt'
 
 FactoryBot.define do
+  factory :public_text do
+    public_text_name {"Mission Statement"}
+    body {"Our mission statement is to be great."}
+  end
+
   factory :episode do
     episode_name {"the first episode"}
     description {"easy"}
