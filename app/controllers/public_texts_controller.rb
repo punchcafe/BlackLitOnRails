@@ -1,5 +1,7 @@
 class PublicTextsController < ApplicationController
   before_action :set_public_text, only: [:edit, :update]
+  before_action :set_section_to_public_texts
+  before_action :set_current_admin
 
   def index
     @public_texts = PublicText.all
@@ -21,6 +23,14 @@ class PublicTextsController < ApplicationController
 
   def public_text_params
     params.require(:public_text).permit(:body)
+  end
+
+  def set_section_to_public_texts
+    @section = "public_texts"
+  end
+
+  def set_current_admin
+    @current_admin = current_admin
   end
 
 end
