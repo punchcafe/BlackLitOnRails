@@ -18,8 +18,8 @@ RSpec.feature 'Mission Statement Display', type: :feature do
     expect(page).to have_content("Our mission statement is to be great.")
     expect(page).to_not have_content("New and improved statement")
     click_on 'Mission Statement'
-    fill_in 'body', with: "New and improved statement"
-    click_on 'update'
+    fill_in 'Body', with: "New and improved statement"
+    click_on 'Update'
     visit '/adminportal'
     click_on 'pages'
     expect(page).to_not have_content("Our mission statement is to be great.")

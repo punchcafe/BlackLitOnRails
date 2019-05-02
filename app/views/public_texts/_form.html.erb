@@ -1,0 +1,21 @@
+
+  <%= form_with(model: public_text, class: "public_text_form", url: admin_public_text_path(@public_text), local: true) do |form| %>
+    <% if public_text.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(public_text.errors.count, "error") %> prohibited this public_text from being saved:</h2>
+
+        <ul>
+        <% public_text.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+      <h1><%= @public_text.public_text_name %></h1>
+      <%= form.label :body, "Body" %>
+      <%= form.text_area :body%>
+
+    <div class="actions">
+      <%= form.submit "Update"%>
+    </div>
+  <% end %>
