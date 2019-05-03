@@ -71,6 +71,8 @@
 </div>
 <div class="mission_statement_holder">
   <h2> Mission statement </h2>
-  <p> Make some shit yeaaaah let's do it blah blah blah</p>
+  <% if @mission_statement %>
+    <%= @mission_statement.body %>
+  <% end %>
 </div>
 <footer></footer>

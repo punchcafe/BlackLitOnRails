@@ -26,7 +26,21 @@ RSpec.feature 'Mission Statement Display', type: :feature do
     expect(page).to have_content("New and improved statement")
   end
 
-  scenario 'Admins can edit the Mission Statement Display and see it displayed on the public root'
+  scenario 'Admins can edit the Mission Statement Display and see it displayed on the public root' do
+    @admin = create(:admin)
+    @public_text = create(:public_text)
+    visit '/'
+    expect(page).to have_content("Our mission statement is to be great.")
+    expect(page).to_not have_content("New and improved statement")
+    auto_sign_in
+    click_on 'pages'
+    click_on 'Mission Statement'
+    fill_in 'Body', with: "New and improved statement"
+    click_on 'Update'
+    visit '/'
+    expect(page).to_not have_content("Our mission statement is to be great.")
+    expect(page).to have_content("New and improved statement")
+  end
 
   scenario 'Anonmyous users may not access Mission Statement editor'
 
