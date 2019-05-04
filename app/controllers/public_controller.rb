@@ -5,9 +5,10 @@ class PublicController < ApplicationController
   def home
     @mission_statement = retrieve_public_text_body("Mission Statement")
     @next_episode_name = retrieve_public_text_body("Next Episode:name")
+    next_episode_date_raw = retrieve_public_text_body("Next Episode:date")
     @next_episode_date = next_episode_date_to_display_s( Date.parse(
-                            retrieve_public_text_body("Next Episode:date")
-                          ))
+                            next_episode_date_raw
+                          )) if next_episode_date_raw
     @episodes = Episode.order(:episode_number).reverse.select{ |episode| episode.episode_number}
   end
 
@@ -24,7 +25,7 @@ class PublicController < ApplicationController
               when 7 then "日"
             end
     month = Date::MONTHNAMES[date_object.month][0..2].upcase
-    return "#{date_object.day} #{month} 「#{moji}」"
+    return "#{month} #{date_object.day} 「#{moji}」"
   end
 
   def retrieve_public_text_body(public_text_name)
