@@ -13,7 +13,7 @@
     <% end %>
       <h1><%= @public_text.public_text_name %></h1>
       <%= form.label :body, "Body" %>
-      <%= form.text_area :body%>
+      <%= @public_text.public_text_name.include?("date") ? form.date_field(:body) : form.text_area(:body)%>
 
     <div class="actions">
       <%= form.submit "Update"%>
