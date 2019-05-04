@@ -85,5 +85,35 @@ RSpec.feature 'Next Episode Display', type: :feature do
     expect(page).to have_content("2021-11-11")
   end
 
+  scenario 'Admins can edit the Next Episode Display: date and see it displayed on the public root' do
+    @admin = create(:admin)
+    @public_text = create(:public_text, public_text_name: "Next Episode:name", body: "OLD BOOK")
+    @public_text = create(:public_text, public_text_name: "Next Episode:date", body: "2020-10-10")
+    visit '/'
+    expect(page).to have_content("OCT 10 「土」")
+    auto_sign_in
+    click_on 'pages'
+    click_on 'Next Episode:date'
+    fill_in 'Body', with: "2021-11-11"
+    click_on 'Update'
+    visit '/'
+    expect(page).to have_content("NOV 11 「木」")
+  end
+
+  scenario 'Admins can edit the Next Episode Display: name and see it displayed on the public root' do
+    @admin = create(:admin)
+    @public_text = create(:public_text, public_text_name: "Next Episode:name", body: "OLD BOOK")
+    @public_text = create(:public_text, public_text_name: "Next Episode:date", body: "2020-10-10")
+    visit '/'
+    expect(page).to have_content("OLD BOOK")
+    auto_sign_in
+    click_on 'pages'
+    click_on 'Next Episode:name'
+    fill_in 'Body', with: "NEW BOOK"
+    click_on 'Update'
+    visit '/'
+    expect(page).to have_content("NEW BOOK")
+  end
+
 
 end
