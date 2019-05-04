@@ -45,3 +45,28 @@ RSpec.feature 'Mission Statement Display', type: :feature do
   scenario 'Anonmyous users may not access Mission Statement editor'
 
 end
+
+
+RSpec.feature 'Next Episode Display', type: :feature do
+
+  scenario 'Admins can edit the Mission Statement Display' do
+    @admin = create(:admin)
+    @public_text = create(:public_text, public_text_name: "Next Episode Name", body: "OLD BOOK")
+    @public_text = create(:public_text, public_text_name: "Next Episode Date", body: "2020/10/10")
+    auto_sign_in
+    click_on 'pages'
+    expect(page).to have_content("OLD BOOK")
+    expect(page).to have_content("2020/10/10")
+    click_on 'Next Episode'
+    fill_in 'Name', with: "NEW BOOK"
+    fill_in 'Date', with: "2021/11/11"
+    click_on 'Update'
+    visit '/adminportal'
+    click_on 'pages'
+    expect(page).to_not have_content("OLD BOOK")
+    expect(page).to_not have_content("2020/10/10")
+    expect(page).to have_content("NEW BOOK")
+    expect(page).to have_content("2021/11/11")
+  end
+
+end
