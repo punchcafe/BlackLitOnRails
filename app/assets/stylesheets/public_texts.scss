@@ -1,3 +1,62 @@
-// Place all the styles related to the public_texts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.public_text {
+  width: 600px;
+  padding: 10px;
+  height: 115px;
+  margin-bottom: 20px;
+}
+
+.public_text:hover {
+  background-color: #f2f2f2;
+  transition: 0.3s;
+}
+
+.public_text_contents {
+  text-align: left;
+  display: inline-block;
+  width: 450px;
+  height: 100%;
+}
+
+.public_text_contents .public_text_name {
+  width: 100%;
+  border-bottom: 1px solid #ff6d19;
+  padding: 1% 0 1% 0;
+  margin: 5px 0 5px 0;
+  height: 15%;
+}
+
+.public_text_contents .public_text_name a{
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Oswald', sans-serif;
+  color: black;
+}
+.public_text_contents .public_text_body {
+  font-style: italic;
+  font-size: 0.9em;
+  height: 65%;
+}
+
+
+.public_text_edit_button {
+  padding-top: 15px;
+  display: inline-block;
+  width: 120px;
+  height: 100%;
+  vertical-align: top;
+}
+
+.public_text_edit_button a {
+  border: 1px solid transparent;
+  padding: 2px 4px 2px 4px;
+  letter-spacing: 1px;
+  font-family: 'Oswald', sans-serif;
+  color: black;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+.public_text_edit_button a:hover {
+  transition: 0.3s;
+  border-bottom: 1px solid orange;
+}
