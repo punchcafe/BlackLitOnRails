@@ -1,7 +1,7 @@
 require 'rails_helper'
 require_relative '../../helpers/web_helpers.rb'
 
-RSpec.feature 'Public Next Episode Display', type: :feature do
+RSpec.feature 'Public Latest  Display', type: :feature do
 
   scenario 'users can see latest episode' do
     @episode = create(:episode)
@@ -26,7 +26,7 @@ RSpec.feature 'Public Next Episode Display', type: :feature do
     expect(page.body).to have_content("THE SECOND EPISODE")
   end
 
-  scenario 'play on spotify button links to spotify' do
+  scenario 'listen on links work' do
     @episode = create(:episode)
     visit '/'
     expect(page).to have_selector(:css, "a[href='#{@episode.spotify_link}'].latest_spotify_button")

@@ -46,7 +46,14 @@ RSpec.feature 'Public Episode Display', type: :feature do
   end
 
 
-  scenario 'episodes contain podcast link buttons'
+  scenario 'episodes contain podcast link buttons' do
+    @episode = create(:episode)
+    visit '/'
+    expect(page).to have_selector(:css, "a[href='#{@episode.spotify_link}'].episode_spotify_link")
+    expect(page).to have_selector(:css, "a[href='#{@episode.soundcloud_link}'].episode_soundcloud_link")
+    expect(page).to have_selector(:css, "a[href='#{@episode.itunes_link}'].episode_itunes_link")
+  end
+
   scenario 'episodes dont contain podcast link buttons if not given'
 
 end

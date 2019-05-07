@@ -62,7 +62,15 @@
               <div class="listen_on">
                 Listen on:
               </div>
-               <%= image_tag("/icon-spotify.png") %> <%= image_tag("/icon-itunes.png") %> <%= image_tag("/icon-soundcloud.png") %>
+               <a href=<%= episode.spotify_link %> class="episode_spotify_link">
+                 <%= image_tag("/icon-spotify.png") %>
+               </a>
+               <a href=<%= episode.itunes_link %> class="episode_itunes_link">
+                <%= image_tag("/icon-itunes.png") %>
+              </a>
+              <a href=<%= episode.soundcloud_link %> class="episode_soundcloud_link">
+                <%= image_tag("/icon-soundcloud.png") %>
+              </a>
             </div>
           </div>
         </div>
