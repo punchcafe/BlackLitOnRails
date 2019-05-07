@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
     @current_admin = current_admin
   end
 
+  def boot_anonymous
+    redirect_to adminportal_path unless @current_admin
+  end
+
 end

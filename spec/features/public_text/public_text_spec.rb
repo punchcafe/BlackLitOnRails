@@ -3,8 +3,17 @@ require_relative '../../helpers/web_helpers.rb'
 
 RSpec.feature 'Pages page', type: :feature do
 
-  scenario 'Admins may access Pages'
-  scenario 'Anonmyous users may not access Pages'
+  scenario 'Admins may access Pages' do
+    @admin = create(:admin)
+    auto_sign_in
+    visit '/admin/public_texts'
+    expect(page).to have_current_path('/admin/public_texts')
+  end
+
+  scenario 'Anonmyous users may not access Pages' do
+    visit '/admin/public_texts'
+    expect(page).to have_current_path('/adminportal')
+  end
 
 end
 
