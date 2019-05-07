@@ -13,6 +13,7 @@ class PublicTextsController < ApplicationController
   end
 
   def update
+    return head(401) unless @current_admin
     @public_text.update_attribute(:body, public_text_params[:body])
     redirect_to admin_public_texts_path
   end
