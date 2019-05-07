@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+PublicText.create( public_text_name: "Mission Statement", body: "")
+PublicText.create( public_text_name: "Next Episode:name", body: "")
+PublicText.create( public_text_name: "Next Episode:date", body: "")
