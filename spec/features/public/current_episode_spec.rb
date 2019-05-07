@@ -26,6 +26,10 @@ RSpec.feature 'Public Next Episode Display', type: :feature do
     expect(page.body).to have_content("THE SECOND EPISODE")
   end
 
-  scenario 'play on spotify button links to spotify'
+  scenario 'play on spotify button links to spotify' do
+    @episode = create(:episode)
+    visit '/'
+    expect(page).to have_selector(:css, "a[href='#{@episode.spotify_link}'].latest_spotify_button")
+  end
 
 end

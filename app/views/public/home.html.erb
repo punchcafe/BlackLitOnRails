@@ -9,7 +9,7 @@
       <h1><%= @episodes[0].episode_name.upcase %></h1>
     <% end %>
     <div class="latest_spotify_button_container">
-      <div class="latest_spotify_button">
+      <a href="<%= @episodes[0] ? @episodes[0].spotify_link : "" %>" class="latest_spotify_button">
         <div class="button_animation"><div id="casette_wheel_1"></div><div id="tape"><hr></div><div id="casette_wheel_2"></div></div>
         <div class="text"><div style="margin-top: 10px; font-family: Impact; font-size: 0.5em; height: 10px;">LISTEN ON</div>
         <div style="font-size: 1.5em; padding-left: 10px; padding-right: 10px; border-bottom: 2px white solid;">
@@ -17,7 +17,7 @@
          </div>
        </div>
         <div class="play_button">▶</div>
-      </div>
+      </a>
     </div>
   </div>
   <% if @episodes[0] %>
