@@ -71,10 +71,14 @@
   </div>
 </div>
 <div class="mission_statement_holder">
-  <a name="mission_statement"></a>
-  <h2> Mission statement </h2>
-  <% if @mission_statement %>
-    <%= @mission_statement %>
-  <% end %>
+  <div class="content_width">
+    <a name="mission_statement"></a>
+    <h2> Mission statement </h2>
+    <div class="body">
+      <% if @mission_statement %>
+        <%= @mission_statement %>
+      <% end %>
+    </div>
+  </div>
 </div>
 <footer></footer>
