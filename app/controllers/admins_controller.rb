@@ -20,7 +20,8 @@ class AdminsController < ApplicationController
 
   def create
     return 0 unless @current_admin
-    encrypted_password = BCrypt::Password.create(params['admin']['password'])
+    salt = ENV['hashsalt'] ? ENV['hashsalt'] : ""
+    encrypted_password = BCrypt::Password.create(salt+params['admin']['password'])
     @admin = Admin.new(
       email: params['admin']['email'],
       encrypted_password: encrypted_password
