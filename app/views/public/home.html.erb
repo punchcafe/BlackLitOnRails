@@ -9,7 +9,7 @@
       <h1><%= @episodes[0].episode_name.upcase %></h1>
     <% end %>
     <div class="latest_spotify_button_container">
-      <a href="<%= @episodes[0] ? @episodes[0].spotify_link : "" %>" class="latest_spotify_button">
+      <a href="<%= @episodes[0] ? @episodes[0].spotify_link : "" %>" class="latest_spotify_button" target="_blank">
         <div class="button_animation"><div id="casette_wheel_1"></div><div id="tape"><hr></div><div id="casette_wheel_2"></div></div>
         <div class="text"><div style="margin-top: 10px; font-family: Impact; font-size: 0.5em; height: 10px;">LISTEN ON</div>
         <div style="font-size: 1.5em; padding-left: 10px; padding-right: 10px; border-bottom: 2px white solid;">
@@ -62,13 +62,13 @@
               <div class="listen_on">
                 Listen on:
               </div>
-               <a href=<%= episode.spotify_link %> class="episode_spotify_link">
+               <a href=<%= episode.spotify_link %> class="episode_spotify_link" target="_blank">
                  <%= image_tag("/icon-spotify.png") %>
                </a>
-               <a href=<%= episode.itunes_link %> class="episode_itunes_link">
+               <a href=<%= episode.itunes_link %> class="episode_itunes_link" target="_blank">
                 <%= image_tag("/icon-itunes.png") %>
               </a>
-              <a href=<%= episode.soundcloud_link %> class="episode_soundcloud_link">
+              <a href=<%= episode.soundcloud_link %> class="episode_soundcloud_link" target="_blank">
                 <%= image_tag("/icon-soundcloud.png") %>
               </a>
             </div>
