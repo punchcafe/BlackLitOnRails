@@ -1,6 +1,6 @@
 class PublicTextsController < ApplicationController
   before_action :set_current_admin
-  before_action :boot_anonymous
+  before_action :boot_anonymous, only: [:edit, :index]
   before_action :set_public_text, only: [:edit, :update]
   before_action :set_section_to_public_texts
 

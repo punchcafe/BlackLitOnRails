@@ -17,6 +17,24 @@ RSpec.feature 'Pages page', type: :feature do
 
 end
 
+RSpec.feature 'Public texts editor', type: :feature do
+
+  scenario 'Admins may access public texts editor' do
+    @admin = create(:admin)
+    @public_text = create(:public_text)
+    auto_sign_in
+    visit "/admin/public_texts/#{@public_text.id}/edit"
+    expect(page).to have_current_path("/admin/public_texts/#{@public_text.id}/edit")
+  end
+
+  scenario 'Anonmyous users may not access public texts editor' do
+    @public_text = create(:public_text)
+    visit "/admin/public_texts/#{@public_text.id}/edit"
+    expect(page).to have_current_path('/adminportal')
+  end
+
+end
+
 RSpec.feature 'Mission Statement Display', type: :feature do
 
   scenario 'Admins can edit the Mission Statement Display' do
@@ -50,9 +68,6 @@ RSpec.feature 'Mission Statement Display', type: :feature do
     expect(page).to_not have_content("Our mission statement is to be great.")
     expect(page).to have_content("New and improved statement")
   end
-
-  scenario 'Anonmyous users may not access Mission Statement editor'
-
 end
 
 
