@@ -5,6 +5,7 @@ body {
   padding: 0px;
   margin: 0px;
   text-align: center;
+  background-color: white;
 }
 
 .nav-buffer {
@@ -38,19 +39,19 @@ body {
   height: 90%;
 }
 
-.admin_nav .links {
+.admin_nav .admin_links {
   vertical-align: top;
   display: inline-block;
   height: 100%;
 }
 
-.admin_nav .links .selected_link {
+.admin_nav .admin_links .selected_link {
   text-decoration: none;
   transition: 0.2s;
   border-bottom: 1px solid #ff6d19;
 }
 
-.admin_nav .links a {
+.admin_nav .admin_links a {
   line-height: 50px;
   letter-spacing: 2px;
   color: black;
@@ -64,7 +65,7 @@ body {
   border-bottom: 1px solid transparent;
 }
 
-.admin_nav .links a:hover {
+.admin_nav .admin_links a:hover {
   text-decoration: none;
   transition: 0.2s;
   border-bottom: 1px solid #ff6d19;

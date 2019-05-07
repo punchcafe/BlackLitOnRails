@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get '/' => 'public#home'
+
   get '/adminportal' => 'admins#portal'
   get '/admindashboard' => 'admins#index'
 
   resources :admins
 
   resource :admin do
+    resources :public_texts, only: [:edit, :update, :index]
     resources :episodes do
       resource :episodeimage, only: [:destroy]
     end

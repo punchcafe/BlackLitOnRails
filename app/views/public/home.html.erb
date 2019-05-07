@@ -1,0 +1,92 @@
+<div class="home_banner">
+<div id="logo_holder"><%= image_tag('/logo_title.png', id: "large_logo") %></div>
+  <div class="links"> <a href="#episodes">EPISODES</a>  <a href="#mission_statement">MISSION STATEMENT</a> </div>
+</div>
+<div id="current_episode">
+  <div class="content_width">
+    <% if @episodes[0] %>
+      <h2>Episode #<%= sprintf '%02d', @episodes[0].episode_number.to_s %>:</h2>
+      <h1><%= @episodes[0].episode_name.upcase %></h1>
+    <% end %>
+    <div class="latest_spotify_button_container">
+      <a href="<%= @episodes[0] ? @episodes[0].spotify_link : "" %>" class="latest_spotify_button" target="_blank">
+        <div class="button_animation"><div id="casette_wheel_1"></div><div id="tape"><hr></div><div id="casette_wheel_2"></div></div>
+        <div class="text"><div style="margin-top: 10px; font-family: Impact; font-size: 0.5em; height: 10px;">LISTEN ON</div>
+        <div style="font-size: 1.5em; padding-left: 10px; padding-right: 10px; border-bottom: 2px white solid;">
+         Spotify
+         </div>
+       </div>
+        <div class="play_button">▶</div>
+      </a>
+    </div>
+  </div>
+  <% if @episodes[0] %>
+    <% if @episodes[0].episode_image.attached? %>
+    <%=image_tag(@episodes[0].episode_image)%>
+    <% end %>
+  <% end %>
+</div>
+<div id="next_episode">
+  <div class="content_width">
+    <div class="episode_pre">
+      Next episode:
+    </div>
+    <div class="next_episode_name">
+    <hr style="width: 30%; border: 1px solid white; display: inline-block;">
+    <%= @next_episode_name %>
+    <hr style="width: 30%; border: 1px solid white; display: inline-block;">
+    <br>
+    <small> <%= @next_episode_date %> </small>
+    </div>
+  </div>
+</div>
+<div class="public_episodes_holder">
+  <a name="episodes"></a>
+  <div class="content_width">
+    <h2> Episodes </h2>
+    <div class="public_episodes">
+      <% @episodes.each do |episode| %>
+        <div class="public_episode_holder">
+          <div class="public_episode">
+            <div class="episode_image">
+              <% if episode.episode_image.attached? %>
+                <%=image_tag(episode.episode_image)%>
+              <% end %>
+            </div>
+            <div class="episode_name">
+              <small><small>Episode <%= episode.episode_number %>:</small></small><br>
+               <%= episode.episode_name %>
+            </div>
+            <div class="episode_information">
+              <div class="episode_description"><%= episode.description %></div>
+              <div class="listen_on">
+                Listen on:
+              </div>
+               <a href=<%= episode.spotify_link %> class="episode_spotify_link" target="_blank">
+                 <%= image_tag("/icon-spotify.png") %>
+               </a>
+               <a href=<%= episode.itunes_link %> class="episode_itunes_link" target="_blank">
+                <%= image_tag("/icon-itunes.png") %>
+              </a>
+              <a href=<%= episode.soundcloud_link %> class="episode_soundcloud_link" target="_blank">
+                <%= image_tag("/icon-soundcloud.png") %>
+              </a>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="mission_statement_holder">
+  <div class="content_width">
+    <a name="mission_statement"></a>
+    <h2> Mission statement </h2>
+    <div class="body">
+      <% if @mission_statement %>
+        <%= @mission_statement %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<footer></footer>

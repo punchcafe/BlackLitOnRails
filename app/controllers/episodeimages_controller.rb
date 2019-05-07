@@ -1,8 +1,9 @@
 class EpisodeimagesController < ApplicationController
+  before_action :set_current_admin
   before_action :set_episode, only: [:destroy]
 
   def destroy
-    return head(401) unless current_admin
+    return head(401) unless @current_admin
     @episode.episode_image.purge
     redirect_to admin_episodes_path
   end
