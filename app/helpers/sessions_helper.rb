@@ -13,7 +13,7 @@ module SessionsHelper
   def authenticate_sign_in
     salt = ENV['hashsalt'] ? ENV['hashsalt'] : ""
     admin_hash = admin_lookup_by_params.encrypted_password
-    return BCrypt::Password.new(salt + admin_hash) == params['password']
+    return BCrypt::Password.new(admin_hash) == salt + params['password']
   end
 
   def create_session(admin)
