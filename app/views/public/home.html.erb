@@ -1,6 +1,6 @@
 <div class="home_banner">
 <div id="logo_holder"><%= image_tag('/logo_title.png', id: "large_logo") %></div>
-  <div class="links"> <a>EPISODES</a>  <a>MISSION STATEMENT</a> </div>
+  <div class="links"> <a href="#episodes">EPISODES</a>  <a href="#mission_statement">MISSION STATEMENT</a> </div>
 </div>
 <div id="current_episode">
   <div class="content_width">
@@ -41,6 +41,7 @@
   </div>
 </div>
 <div class="public_episodes_holder">
+  <a name="episodes"></a>
   <div class="content_width">
     <h2> Episodes </h2>
     <div class="public_episodes">
@@ -70,6 +71,7 @@
   </div>
 </div>
 <div class="mission_statement_holder">
+  <a name="mission_statement"></a>
   <h2> Mission statement </h2>
   <% if @mission_statement %>
     <%= @mission_statement %>
