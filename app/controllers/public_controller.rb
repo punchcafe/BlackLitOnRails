@@ -22,7 +22,7 @@ class PublicController < ApplicationController
               when 4 then "木"
               when 5 then "金"
               when 6 then "土"
-              when 7 then "日"
+              when 0 then "日"
             end
     month = Date::MONTHNAMES[date_object.month][0..2].upcase
     return "#{month} #{date_object.day} 「#{moji}」"
