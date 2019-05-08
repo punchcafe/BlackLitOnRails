@@ -1,0 +1,20 @@
+<%= render "admins/admin_nav" %>
+<div class="notice"><%= notice %></div>
+<div class="page_content">
+  <div><%= link_to 'new', new_admin_path, class: "new_admin_link" %></div>
+  <br>
+  <% @admins.each do |admin| %>
+    <div class="admin">
+      <div class="email_holder">
+        <%= admin.email %>
+      </div>
+
+        <div class="delete_holder">
+          <% unless admin.id == @current_admin['id'] %>
+          <%= link_to 'Delete', admin, method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete_admin' %><br>
+          <% end %>
+     </div>
+
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,42 @@
+<%= render "admins/admin_nav" %>
+<div class="notice"><%= notice %></div>
+<div class="page_content">
+  <div><%= link_to 'new', new_admin_episode_path, class: "new_episode_link" %></div>
+  <br>
+  <% @episodes.each do |episode| %>
+    <div class="index_episode">
+      <div class="image_holder">
+        <% if episode.episode_image.attached? %>
+        <%= image_tag(episode.episode_image) %>
+        <% end %>
+      </div>
+      <div class="information">
+        <div class="number">
+        Episode <%= episode.episode_number %>:
+        </div>
+        <div class="name">
+        <%= episode.episode_name %>
+        </div>
+        <div class="description">
+          <%= episode.description %>
+        </div>
+      </div>
+      <div class="links">
+        <%= image_tag("/icon-spotify.png") unless episode.spotify_link == "" %>
+        <%= image_tag("/icon-itunes.png") unless episode.itunes_link == "" %>
+        <%= image_tag("/icon-soundcloud.png") unless episode.soundcloud_link == "" %>
+      </div>
+      <div class="management_panel">
+        <div class="edit">
+          <%= link_to 'Edit', edit_admin_episode_path(episode) %>
+        </div>
+        <div class="delete">
+          <%= link_to 'Delete', admin_episode_path(episode), class: "delete_button", method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+<br>

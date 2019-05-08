@@ -1,0 +1,356 @@
+// Place all the styles related to the admins controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+  background-color: white;
+}
+
+.nav-buffer {
+  height: 50px;
+}
+
+.admin_nav {
+  overflow: hidden;
+  z-index: 1;
+  font-family: 'Oswald', sans-serif;
+  color: black;
+  position: fixed;
+  width: 100%;
+  height: 50px;
+}
+
+
+
+
+.admin_nav .logo{
+  vertical-align: top;
+  display: inline-block;
+  height: 100%;
+  margin-right: 20px;
+}
+
+.admin_nav .logo img {
+  margin-top: 2%;
+  vertical-align: top;
+  display: inline-block;
+  height: 90%;
+}
+
+.admin_nav .admin_links {
+  vertical-align: top;
+  display: inline-block;
+  height: 100%;
+}
+
+.admin_nav .admin_links .selected_link {
+  text-decoration: none;
+  transition: 0.2s;
+  border-bottom: 1px solid #ff6d19;
+}
+
+.admin_nav .admin_links a {
+  line-height: 50px;
+  letter-spacing: 2px;
+  color: black;
+  text-decoration: none;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+
+.admin_nav .admin_links a:hover {
+  text-decoration: none;
+  transition: 0.2s;
+  border-bottom: 1px solid #ff6d19;
+}
+
+.admin_nav .current_admin{
+  padding-top: 5px;
+  line-height: 20px;
+  vertical-align: top;
+  padding-left: 10px;
+  margin-left: 20px;
+  padding-right: 10px;
+  display: inline-block;
+  height: 100%;
+  color: darkgrey;
+  font-size: 13px;
+}
+
+.admin_nav .current_admin a {
+  font-family: sans-serif;
+  padding: 2px 4px 2px 4px;
+  text-decoration: none;
+  font-weight: bold;
+  color: darkgrey;
+}
+
+.admin_nav .current_admin:hover a {
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid white;
+  color: white;
+  transition: 0.2s;
+}
+
+.admin_nav .current_admin:hover a:hover {
+  background-color: white;
+  color: #ff6d19;
+  transition: 0.2s;
+}
+
+.admin_nav .current_admin:hover{
+  background-color: #ff6d19;
+  transition: 0.3s;
+  color: white;
+}
+
+.admin_nav:hover ~.page_content{
+    opacity: 0.6;
+    filter: blur(2px);
+    transition: 0.2s;
+}
+
+
+
+
+
+.portal_panel {
+  height: 500px;
+  display: inline-block;
+  text-align: center;
+  width: 500px;
+}
+
+.portal_panel img {
+  z-index: -1;
+  position: absolute;
+  width: 500px;
+}
+
+.portal_panel:hover img{
+  transition: 0.4s;
+  opacity: 0.9;
+  filter: blur(3px);
+}
+
+
+.portal_panel .login_interface{
+  width: 500px;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  top: 200px;
+  opacity: 0;
+}
+
+.portal_panel:hover .login_interface{
+  transition: 0.4s;
+  opacity: 1;
+}
+
+.portal_panel .login_interface input {
+  font-weight: bold;
+  box-shadow: 0px 3px 6px black;
+  color: white;
+  background-color: black;
+  text-align: center;
+  height: 21px;
+  border-radius: 8px;
+  border: 0px;
+}
+
+.portal_panel .login_interface input:hover {
+  color: white;
+  border: 0px;
+  transition: 0.2s;
+  opacity: 0.8;
+  background-color: #ff6d19;
+}
+
+
+.portal_panel .login_interface input::placeholder {
+  font-weight: lighter;
+  font-style: italic;
+}
+
+
+.portal_panel .login_interface input:hover::placeholder {
+  transition: 0.2s;
+  color: white;
+  font-style: italic;
+}
+
+.portal_panel .login_interface input[type=submit] {
+  box-shadow: 0 0 0;
+  border-radius: 0px;
+  color: black;
+  border-bottom: 1px solid #ff6d19;
+  width: 60px;
+  height: 30px;
+  font-weight: bold;
+  background-color: transparent;
+}
+
+.portal_panel .login_interface input[type=submit]:hover {
+  border-bottom: 1px solid #ff6d19;
+  background-color: #ff6d19;
+  opacity: 1;
+  color: white;
+  transition: 0.2s;
+}
+
+.page_content {
+  display: inline-block;
+  width: 67%;
+  min-width: 500px;
+  max-width: 800px;
+  padding-top: 50px;
+  color: black;
+  height: 700px;
+}
+
+.admin {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.9em;
+  overflow: hidden;
+  text-align: right;
+  line-height: 50px;
+  height: 50px;
+  margin: 20px 0px 20px 0px;
+}
+
+.adminself {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.9em;
+  overflow: hidden;
+  text-align: right;
+  line-height: 50px;
+  height: 50px;
+  margin: 20px 0px 20px 0px;
+}
+
+.adminself:hover {
+}
+
+.admin:hover {
+  background-color: #f2f2f2;
+  transition: 0.3s;
+}
+
+.admin .email_holder{
+  font-weight: bold;
+  text-align: left;
+  vertical-align: top;
+  height: 100%;
+  padding-left: 4%;
+  width: 80%;
+  display: inline-block;
+}
+
+.admin:hover .delete_holder{
+  transition: 0.3s;
+  border-left: 1px solid #f2f2f2;
+}
+
+.admin:hover .delete_holder a{
+  filter: none;
+  transition: 0.3s;
+}
+
+.admin .delete_holder a{
+  padding: 2px 4px 2px 4px;
+  border-bottom: 1px solid transparent;
+  text-decoration: none;
+  filter: grayscale(1);
+  color: #e02f58;
+  font-family: 'Oswald', sans-serif;
+}
+
+.admin .delete_holder a:hover{
+  transition: 0.2s;
+  border-bottom: 1px solid #e02f58;
+  background-color: #e02f58;
+  color: white;
+}
+
+.admin .delete_holder{
+  text-align: center;
+  border-left: 1px solid #f2f2f2;
+  height: 100%;
+  width: 15%;
+  display: inline-block;
+}
+
+.new_admin_link {
+  font-weight: bold;
+  font-family: 'Oswald', sans-serif;
+  color: black;
+  text-decoration: none;
+  font-size: 22px;
+  padding: 5px 25px 5px 25px;
+  height: 32px;
+  border-bottom: 1px solid #ff6d19;
+}
+
+.new_admin_link:hover {
+  color: white;
+  background-color: #ff6d19;
+  transition: 0.2s;
+}
+.admin_input {
+  margin-top: 120px;
+}
+.admin_input input{
+  margin-top: 20px;
+  font-weight: bold;
+  box-shadow: 0px 3px 6px black;
+  color: white;
+  background-color: black;
+  text-align: center;
+  width: 150px;
+  height: 21px;
+  border-radius: 8px;
+  border: 0px;
+}
+
+.admin_input input:hover{
+  color: white;
+  border: 0px;
+  transition: 0.3s;
+  opacity: 0.8;
+  background-color: #ff6d19;
+}
+
+.admin_input input::placeholder {
+  font-weight: lighter;
+  font-style: italic;
+}
+
+.admin_input input[type=submit] {
+  width: auto;
+  box-shadow: 0px 0px 0px black;
+  border-radius: 0;
+  margin-top: 20px;
+  border: 0px;
+  color: black;
+  border-bottom: 1px solid #ff6d19;
+  height: 30px;
+  font-weight: bold;
+  background-color: transparent;
+}
+
+.admin_input input[type=submit]:hover {
+  border-bottom: 1px solid #ff6d19;
+  background-color: #ff6d19;
+  opacity: 1;
+  color: white;
+  transition: 0.2s;
+}

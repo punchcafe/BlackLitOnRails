@@ -1,0 +1,2 @@
+module EpisodeimagesHelper
+end

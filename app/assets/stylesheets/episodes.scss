@@ -1,0 +1,255 @@
+
+.new_episode_link  {
+  font-weight: bold;
+  font-family: 'Oswald', sans-serif;
+  color: black;
+  text-decoration: none;
+  font-size: 22px;
+  padding: 5px 25px 5px 25px;
+  height: 32px;
+  border-bottom: 1px solid #ff6d19;
+}
+
+.new_episode_link:hover {
+  color: white;
+  background-color: #ff6d19;
+  transition: 0.2s;
+}
+
+.index_episode {
+  margin-top: 5px;
+  overflow: hidden;
+  height: 85px;
+  display: inline-block;
+  width: 100%;
+  padding: 2%;
+  min-width: 500px;
+  text-align: left;
+}
+
+.index_episode:hover {
+  background-color: #f2f2f2;
+  transition: 0.2s;
+}
+
+.index_episode .image_holder {
+  filter: grayscale(1);
+  height: 100%;
+  display: inline-block;
+  width: 20%;
+  overflow: hidden;
+}
+
+.index_episode:hover .image_holder {
+  filter: none;
+  transition: 0.3s;
+}
+
+.index_episode .image_holder img {
+  height: 100%;
+}
+
+.index_episode .information {
+  height: 100%;
+  margin-left: 2%;
+  text-align: left;
+  display: inline-block;
+  width: 45%;
+  overflow: hidden;
+}
+.index_episode .information .number{
+  margin-top: 5px;
+  font-size: 0.7em;
+  font-family: 'Oswald', sans-serif;
+  width: 100%;
+  height: 5%;
+}
+.index_episode .information .name{
+  font-weight: bold;
+  font-family: 'Oswald', sans-serif;
+  width: 100%;
+  border-bottom: 1px solid #ff6d19;
+  padding: 1% 0 1% 0;
+  margin: 5px 0 5px 0;
+  height: 20%;
+}
+.index_episode .information .description{
+  font-style: italic;
+  font-size: 0.9em;
+  height: 65%;
+}
+
+.index_episode .links {
+  text-align: center;
+  display: inline-block;
+  width: 19%;
+  overflow: hidden;
+}
+
+.index_episode .links img {
+  filter: grayscale(1);
+  width: 30px;
+}
+
+.index_episode:hover .links img {
+  filter: none;
+  transition: 0.3s;
+}
+
+.index_episode .management_panel {
+  text-align: right;
+  vertical-align: top;
+  height: 100%;
+  display: inline-block;
+  padding: 10px 0 10px 0;
+  width: 8%;
+  overflow: hidden;
+}
+
+.index_episode .management_panel div {
+  text-align: right;
+  height: 30%;
+  padding-top: 5px;
+}
+
+.index_episode .management_panel div a {
+  border: 1px solid transparent;
+  padding: 2px 4px 2px 4px;
+  letter-spacing: 1px;
+  font-family: 'Oswald', sans-serif;
+  color: black;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+.index_episode .management_panel div a:hover {
+  transition: 0.3s;
+  border-bottom: 1px solid orange;
+}
+
+.index_episode .management_panel .delete_button {
+  filter: grayscale(1);
+  color: #e02f58;
+}
+
+.index_episode:hover .management_panel .delete_button {
+  filter: none;
+  transition: 0.3s;
+}
+
+.index_episode .management_panel div .delete_button:hover {
+  transition: 0.2s;
+  border-bottom: 1px solid #e02f58;
+  background-color: #e02f58;
+  color: white;
+}
+
+label {
+  display: none;
+}
+
+.episode_form {
+  display: inline-block;
+  width: 55%;
+  min-width: 500px;
+  text-align: center;
+}
+
+.episode_input {
+  padding: 10px 0px 10px 0px;
+  width: 100%;
+  text-align: center;
+}
+
+#episode_name_input {
+  padding: 0;
+
+  width: 80%;
+}
+#episode_number_input {
+  padding: 0;
+  margin-left: 2%;
+  width: 17%;
+}
+
+
+
+.episode_input .delete_button:hover {
+  transition: 0.2s;
+  border-bottom: 1px solid #e02f58;
+  background-color: #e02f58;
+  color: white;
+}
+
+
+.episode_input .delete_button {
+  color: #e02f58;
+  font-size: 0.8em;
+  font-family: 'Oswald', sans-serif;
+  text-decoration: none;
+  padding: 6px 8px 6px 8px;
+}
+
+.episode_input .text_input {
+  min-height: 25px;
+  width: 100%;
+  font-weight: bold;
+  box-shadow: 0px 3px 2px black;
+  color: white;
+  background-color: black;
+  text-align: center;
+  border-radius: 8px;
+  border: 0px;
+}
+
+.episode_input .text_input:hover {
+  color: white;
+  border: 0px;
+  transition: 0.3s;
+  opacity: 0.8;
+  background-color: #ff6d19;
+}
+
+.episode_input .text_input::placeholder {
+  font-weight: lighter;
+  font-style: italic;
+}
+
+.episode_input textarea {
+  padding-top: 8px;
+  height: 85px;
+}
+
+.form_divider {
+  border-bottom: solid #ff6d19 1px;
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+  letter-spacing: 2.5px;
+  margin: 10px 0 10px 0;
+  padding: 0 0 5px 0;
+}
+
+input[type=submit] {
+  margin-top: 10px;
+  border: 0px;
+  color: black;
+  border-bottom: 1px solid #ff6d19;
+  height: 30px;
+  font-weight: bold;
+  background-color: transparent;
+}
+
+input[type=submit]:hover {
+  border-bottom: 1px solid #ff6d19;
+  background-color: #ff6d19;
+  opacity: 1;
+  color: white;
+  transition: 0.2s;
+}
+input[type=file] {
+  display: inline-block;
+  font-style: italic;
+  opacity: 1;
+  color: black;
+  transition: 0.2s;
+}

@@ -1,0 +1,345 @@
+body {
+  font-family: 'Oswald', sans-serif;
+}
+
+.content_width {
+  position: relative;
+  min-width: 800px;
+  width: 66%;
+  height: 100%;
+  display: inline-block;
+}
+
+.home_banner {
+  background-color: white;
+  width: 100%;
+  border-bottom: solid darkgrey 1px;
+}
+
+#logo_holder {
+  height: 275px;
+  overflow: hidden;
+}
+
+#large_logo {
+  width: 550px;
+}
+
+.links {
+  display: inline-block;
+  width: 500px;
+  margin: 10px;
+}
+
+.links a {
+  margin: 0 10px;
+  padding: 1px 4px;
+  border: 2px solid transparent;
+  letter-spacing: 0.2px;
+  color: black;
+  text-decoration: none;
+}
+
+.links a:hover {
+  border-image:
+    linear-gradient(
+      to right,
+      #1DB954,
+      #22ad75
+    ) 0 0 100%;
+}
+
+
+#current_episode {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  border-bottom: 1px solid white;
+}
+
+
+#current_episode img {
+  left: 0;
+  z-index: -1;
+  position: absolute;
+  filter: grayscale(1);
+  width: 100%;
+  min-height: 100%;
+}
+
+#current_episode h1 {
+  background-color: rgba(40, 40, 40, 0.7);
+
+  z-index: 2;
+  font-family: Impact;
+  color: white;
+  font-size: 3.5em;
+  left: 50px;
+  position: absolute;
+  bottom: 0px;
+}
+
+#current_episode h2 {
+  background-color: rgba(255, 255, 255, 1);
+  color: #3a3a3a;
+  z-index: 1;
+  font-family: Impact;
+  font-size: 2.3em;
+  left: 30px;
+  position: absolute;
+  bottom: 70px;
+}
+
+#current_episode .latest_spotify_button_container {
+  z-index: 1;
+  right: 30px;
+  position: absolute;
+  bottom: 150px;
+}
+
+#current_episode .latest_spotify_button {
+  display: inline-block;
+  font-family: "Brush Script MT", cursive;
+  text-decoration: none;
+  width: 195px;
+  height: 85px;
+  background: black;
+  color: white;
+  font-size: 1.9em;
+  position: relative;
+  bottom: 0px;
+}
+
+#current_episode .latest_spotify_button:hover {
+  transition: 0.2s;
+  box-shadow: 0px 5px 10px black;
+  font-family: "Brush Script MT", cursive;
+  background: linear-gradient(#1DB954, #22ad75);
+  color: white;
+  font-size: 1.9em;
+  bottom: 10px;
+}
+
+#current_episode .latest_spotify_button .text {
+  padding-left: 10px;
+  width: 60%;
+  position: relative;
+  height: 85px;
+}
+
+#current_episode .latest_spotify_button .play_button {
+  position: absolute;
+  right: 10px;
+  top: -10px;
+  height: 100%;
+  font-size: 2.8em;
+  width: 20%;
+}
+
+#current_episode .latest_spotify_button .button_animation {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#current_episode .latest_spotify_button:hover .button_animation #casette_wheel_1 {
+  left: 30px;
+  top: 20px;
+  animation:spin 4s linear infinite;
+  position: absolute;
+  border: dashed 3px rgba(255,255,255, 0.5);
+  border-radius: 30px;
+  width: 37px;
+  height: 37px;
+}
+
+#current_episode .latest_spotify_button:hover .button_animation #casette_wheel_2 {
+  right: 30px;
+  top: 20px;
+  animation:spin 4s linear infinite;
+  position: absolute;
+  border: dashed 3px rgba(255,255,255, 0.5);
+  border-radius: 30px;
+  width: 37px;
+  height: 37px;
+}
+
+#current_episode .latest_spotify_button:hover .button_animation #tape {
+  width: 73px;
+  overflow: hidden;
+  right: 62px;
+  top: 7px;
+  position: absolute;
+}
+
+#current_episode .latest_spotify_button .button_animation #tape hr {
+ display: none;
+}
+#current_episode .latest_spotify_button:hover .button_animation #tape hr {
+  display: inherit;
+  width: 400px;
+  border: dashed 1.5px rgba(255,255,255, 0.5);
+  animation: slide_tape 0.3s linear infinite;
+}
+
+
+
+
+
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+@keyframes slide_tape {
+  from {
+  margin-left: 0px;
+}
+
+to {
+  margin-left: 10px;
+}
+}
+
+#next_episode {
+  color: white;
+  background-color: #3a3a3a;
+}
+
+#next_episode .episode_pre {
+  margin-top: 50px;
+  font-family: "Brush Script MT", cursive;
+  font-size: 2em;
+}
+
+#next_episode .next_episode_name {
+  font-family: Impact;
+  font-size: 2em;
+  margin-bottom: 70px;
+  line-height: 25px;
+}
+
+#next_episode .next_episode_name small{
+  margin: 0;
+  font-size: 0.5em;
+}
+
+.public_episodes_holder {
+  padding-top: 15px;
+  border-top: 2px solid darkgrey;
+  background-color: #ededed;
+}
+
+.public_episodes {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
+.public_episode_holder {
+  height: 250px;
+}
+
+.public_episode {
+  border-top: solid 2px transparent;
+  border-image:
+    linear-gradient(
+      to right,
+      #1DB954,
+      #22ad75
+    ) 25% 25%;
+  overflow: hidden;
+  display: inline-block;
+  background-color: white;
+  margin-top: 20px;
+  width: 190px;
+  height: 210px;
+}
+
+.public_episode:hover {
+  transition: 0.2s;
+  color: white;
+  background-color: black;
+}
+
+.public_episode .episode_image{
+  overflow: hidden;
+  height: 140px;
+}
+
+.public_episode:hover .episode_image{
+  transition: 0.3s;
+  height: 70px;
+}
+
+.public_episode:hover .episode_image img{
+}
+
+
+.public_episode .episode_image img{
+  filter: grayscale(100%);
+  height: 140px;
+}
+
+.public_episode .episode_name {
+  text-align: left;
+  padding: 10px 20px;
+  height: 70px;
+}
+
+.public_episode:hover .episode_name {
+  color: white;
+  transition: 0.3s;
+  height: 30px;
+}
+
+.public_episode .episode_description {
+  overflow: hidden;
+  font-style: italic;
+  font-size: 0.7em;
+  text-align: left;
+  padding: 0px 20px 3px 20px;
+  margin-bottom: 2px;
+  height: 55px;
+}
+
+.public_episode .episode_information  img{
+  height: 20px;
+}
+
+.listen_on {
+  vertical-align: top;
+  height: 100%;
+  font-weight: bold;
+  display: inline-block;
+
+  font-size: 0.7em;
+  margin-right: 5px;
+  line-height: 20px;
+}
+
+.mission_statement_holder {
+  padding-top: 15px;
+  margin-bottom: 80px;
+}
+
+.mission_statement_holder h2{
+  padding: 15px;
+}
+
+.mission_statement_holder .body{
+  display: inline-block;
+  width: 600px;
+  text-align: left;
+}
+
+
+footer {
+  background-color: black;
+  border-top: solid 4px transparent;
+  border-image:
+    linear-gradient(
+      to right,
+      #1DB954,
+      #22ad75
+    ) 100% 0 0;
+  height: 130px;
+}

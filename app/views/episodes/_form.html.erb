@@ -1,0 +1,52 @@
+
+  <%= form_with(model: episode, class: "episode_form", url: @episode[:id] ? admin_episode_path(@episode) : admin_episodes_path, local: true) do |form| %>
+    <% if episode.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(episode.errors.count, "error") %> prohibited this episode from being saved:</h2>
+
+        <ul>
+        <% episode.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="form_divider">Episode Information</div>
+    <div class="episode_input">
+      <%= form.label :episode_name, "Episode Name" %>
+      <%= form.text_field :episode_name, class: "text_input", placeholder: "Episode Name", id: "episode_name_input" %>
+      <%= form.label :episode_number, "Episode Number" %>
+      <%= form.text_field :episode_number, class: "text_input", placeholder: "Episode #", id: "episode_number_input" %>
+    </div>
+
+    <div  class="episode_input">
+      <%= form.label :description, "Episode Description" %>
+      <%= form.text_area :description, class: "text_input", placeholder: "Description"  %>
+    </div>
+    <div class="form_divider">Episode Image</div>
+    <div  class="episode_input">
+      <%= form.label :episode_image, "Episode Image" %>
+      <%= form.file_field :episode_image %>
+      <% if @episode.episode_image.attached? %>
+        <%= link_to 'Delete Picture', "/admin/episodes/#{@episode.id}/episodeimage", class: "delete_button", method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </div>
+    <div class="form_divider">Links</div>
+    <div  class="episode_input">
+      <%= form.label :spotify_link, "Spotify Link" %>
+      <%= form.text_field :spotify_link, class: "text_input", placeholder: "Spotify"  %>
+    </div>
+    <div  class="episode_input">
+      <%= form.label :soundcloud_link, "Soundcloud Link" %>
+      <%= form.text_field :soundcloud_link, class: "text_input", placeholder: "Soundcloud"  %>
+    </div>
+    <div  class="episode_input">
+      <%= form.label :itunes_link, "Itunes Link" %>
+      <%= form.text_field :itunes_link, class: "text_input", placeholder: "Itunes"  %>
+    </div>
+
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
