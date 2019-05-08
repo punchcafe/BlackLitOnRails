@@ -17,7 +17,7 @@ FactoryBot.define do
 
   factory :admin do
     email { "testboy@aol.com" }
-    encrypted_password { ENV["hashsalt"] ? ENV["hashsalt"] : "" + BCrypt::Password.create("helloworld") }
+    encrypted_password { BCrypt::Password.create( (ENV["hashsalt"] ? ENV["hashsalt"] : "") + "helloworld") }
     #encrypted_password  "$2a$10$ZzNU2b8bUGtj0YffX9EyGeQUjS3Yb77MYreZnuLiFhBAegh0Hv.M2"
     #helloworld
   end
