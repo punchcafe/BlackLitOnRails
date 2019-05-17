@@ -222,6 +222,18 @@ to {
   font-size: 0.5em;
 }
 
+#next_episode .next_episode_name .next_episode_name_holder{
+  display: inline-block;
+  max-width: 35%;
+  line-height: 30px;
+}
+
+#next_episode .next_episode_name hr{
+  width: 30%;
+  border: 1px solid white;
+  display: inline-block;
+}
+
 .public_episodes_holder {
   padding-top: 15px;
   border-top: 2px solid darkgrey;
