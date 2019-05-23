@@ -17,12 +17,24 @@ body {
 }
 
 #logo_holder {
+  width: 100%;
+  text-align: center;
+  position: relative;
   height: 275px;
   overflow: hidden;
 }
 
+#logo_centerer {
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  height: 300px;
+}
+
 #large_logo {
-  width: 550px;
+  height: 100%;
 }
 
 .links {
