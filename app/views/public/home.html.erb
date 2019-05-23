@@ -6,18 +6,7 @@
 </div>
   <div class="links"> <a href="#episodes">EPISODES</a>  <a href="#mission_statement">MISSION STATEMENT</a> </div>
 </div>
-<script>
-  window.addEventListener('scroll', function(e) {
-    if(window.scrollY<120){
-      document.getElementById("logo_centerer").style.height = (((150-window.scrollY)/150)*300).toString() +"px"
-    }else{
-      document.getElementById("logo_centerer").style.height = Math.round((30/150)*300).toString() +"px"
-    }
-    console.log(window.scrollY);
-    console.log(document.getElementById("large_logo").style.height);
 
-  });
-</script>
 <div id="current_episode">
   <div class="content_width">
     <% if @episodes[0] %>
