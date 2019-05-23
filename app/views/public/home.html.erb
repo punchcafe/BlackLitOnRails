@@ -2,6 +2,15 @@
 <div id="logo_holder"><%= image_tag('/logo_title.png', id: "large_logo") %></div>
   <div class="links"> <a href="#episodes">EPISODES</a>  <a href="#mission_statement">MISSION STATEMENT</a> </div>
 </div>
+<script>
+  window.addEventListener('scroll', function(e) {
+    if(window.scrollY<149){
+      console.log(((150-window.scrollY)/150).toString() +"px")
+      document.getElementById("large_logo").style.width = (((150-window.scrollY)/150)*550).toString() +"px"
+    }
+    console.log(window.scrollY);
+  });
+</script>
 <div id="current_episode">
   <div class="content_width">
     <% if @episodes[0] %>
