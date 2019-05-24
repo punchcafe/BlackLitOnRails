@@ -4,5 +4,10 @@
     }else{
       document.getElementById("logo_centerer").style.height = "50 px"
     }
+    if(window.scrollY<275){
+      document.getElementById("public_nav").style.display = "none"
+    }else{
+      document.getElementById("public_nav").style.display = "block"
+    }
     console.log(window.scrollY);
   });
