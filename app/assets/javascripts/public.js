@@ -29,6 +29,5 @@ function hideNav(){
 }
 
 function showNav(){
-  console.log("showing!")
   document.getElementById("public_nav").style.display = "block"
 }

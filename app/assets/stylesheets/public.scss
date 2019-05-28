@@ -9,10 +9,34 @@ body {
   z-index: 5;
   background-color: white;
   border-bottom: 1px grey solid;
+  vertical-align: top;
 }
+
+#public_nav .public_nav_contents {
+  display: inline-block;
+  text-align: left;
+  min-width: 800px;
+  width: 62%;
+  position: relative;
+}
+
 #public_nav img{
   margin-top: 6px;
   height: 45px;
+  display: inline-block;
+}
+
+#public_nav .links{
+  width: auto;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 24px;
+  right: 10px;
+  display: inline;
+}
+
+#public_nav .links a{
 }
 
 .content_width {
