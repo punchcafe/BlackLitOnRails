@@ -1,7 +1,20 @@
+<nav id="public_nav">
+  <div class="public_nav_contents">
+    <%= image_tag('/glasses.png') %>
+    <%= image_tag('/text_logo.png') %>
+    <div class="links"> <a href="#episodes">EPISODES</a>  <a href="#mission_statement">MISSION STATEMENT</a> </div>
+  </div>
+</nav>
+
 <div class="home_banner">
-<div id="logo_holder"><%= image_tag('/logo_title.png', id: "large_logo") %></div>
+<div id="logo_holder">
+  <div id="logo_centerer">
+    <%= image_tag('/logo_title.png', id: "large_logo") %>
+  </div>
+</div>
   <div class="links"> <a href="#episodes">EPISODES</a>  <a href="#mission_statement">MISSION STATEMENT</a> </div>
 </div>
+
 <div id="current_episode">
   <div class="content_width">
     <% if @episodes[0] %>
@@ -32,9 +45,9 @@
       Next episode:
     </div>
     <div class="next_episode_name">
-    <hr style="width: 30%; border: 1px solid white; display: inline-block;">
-    <%= @next_episode_name %>
-    <hr style="width: 30%; border: 1px solid white; display: inline-block;">
+    <hr>
+    <div class="next_episode_name_holder"><%= @next_episode_name %></div>
+    <hr>
     <br>
     <small> <%= @next_episode_date %> </small>
     </div>

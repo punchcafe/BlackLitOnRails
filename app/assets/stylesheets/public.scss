@@ -2,6 +2,43 @@ body {
   font-family: 'Oswald', sans-serif;
 }
 
+#public_nav {
+  height: 60px;
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+  background-color: white;
+  border-bottom: 1px grey solid;
+  vertical-align: top;
+}
+
+#public_nav .public_nav_contents {
+  display: inline-block;
+  text-align: left;
+  min-width: 800px;
+  width: 62%;
+  position: relative;
+}
+
+#public_nav img{
+  margin-top: 6px;
+  height: 45px;
+  display: inline-block;
+}
+
+#public_nav .links{
+  width: auto;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 24px;
+  right: 10px;
+  display: inline;
+}
+
+#public_nav .links a{
+}
+
 .content_width {
   position: relative;
   min-width: 800px;
@@ -17,18 +54,30 @@ body {
 }
 
 #logo_holder {
+  width: 100%;
+  text-align: center;
+  position: relative;
   height: 275px;
   overflow: hidden;
 }
 
+#logo_centerer {
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  height: 250px;
+}
+
 #large_logo {
-  width: 550px;
+  height: 100%;
 }
 
 .links {
   display: inline-block;
   width: 500px;
-  margin: 10px;
+  margin: 20px;
 }
 
 .links a {
@@ -220,6 +269,18 @@ to {
 #next_episode .next_episode_name small{
   margin: 0;
   font-size: 0.5em;
+}
+
+#next_episode .next_episode_name .next_episode_name_holder{
+  display: inline-block;
+  max-width: 35%;
+  line-height: 30px;
+}
+
+#next_episode .next_episode_name hr{
+  width: 30%;
+  border: 1px solid white;
+  display: inline-block;
 }
 
 .public_episodes_holder {
