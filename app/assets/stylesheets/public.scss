@@ -300,6 +300,7 @@ to {
 }
 
 .public_episode {
+  transition: 0.2s;
   border-top: solid 2px transparent;
   border-image:
     linear-gradient(
@@ -322,6 +323,7 @@ to {
 }
 
 .public_episode .episode_image{
+  transition: 0.2s;
   overflow: hidden;
   height: 140px;
 }
@@ -331,9 +333,6 @@ to {
   height: 70px;
 }
 
-.public_episode:hover .episode_image img{
-}
-
 
 .public_episode .episode_image img{
   filter: grayscale(100%);
@@ -341,6 +340,7 @@ to {
 }
 
 .public_episode .episode_name {
+  transition: 0.2;
   text-align: left;
   padding: 10px 20px;
   height: 70px;
